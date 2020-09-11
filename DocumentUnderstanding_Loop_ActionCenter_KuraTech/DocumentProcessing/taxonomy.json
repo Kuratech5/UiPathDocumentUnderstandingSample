@@ -1,0 +1,559 @@
+﻿{
+  "DataContractVersion": "1.0",
+  "DocumentTypes": [
+    {
+      "DocumentTypeId": "マーケティング.アンケート.イベント",
+      "Group": "マーケティング",
+      "Category": "アンケート",
+      "Name": "イベントA",
+      "OptionalUniqueIdentifier": null,
+      "TypeField": {
+        "FieldId": "マーケティング.アンケート.イベント.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "マーケティング.アンケート.イベント.氏名",
+          "FieldName": "氏名",
+          "IsMultiValue": false,
+          "Type": "Name",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "マーケティング.アンケート.イベント.メールアドレス",
+          "FieldName": "メールアドレス",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "マーケティング.アンケート.イベント.電話番号",
+          "FieldName": "電話番号",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "マーケティング.アンケート.イベント.イベントの満足度",
+          "FieldName": "イベントの満足度",
+          "IsMultiValue": false,
+          "Type": "Set",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        },
+        {
+          "FieldId": "マーケティング.アンケート.イベント.ニュースレターを購読する",
+          "FieldName": "ニュースレターを購読する",
+          "IsMultiValue": false,
+          "Type": "Boolean",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "マーケティング.アンケート.イベント.コメント",
+          "FieldName": "コメント",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "ファイナンス.領収書.交通費",
+      "Group": "ファイナンス",
+      "Category": "領収書",
+      "Name": "新幹線",
+      "OptionalUniqueIdentifier": null,
+      "TypeField": {
+        "FieldId": "ファイナンス.領収書.交通費.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "ファイナンス.領収書.交通費.金額",
+          "FieldName": "金額",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.領収書.交通費.出発",
+          "FieldName": "出発",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.領収書.交通費.到着",
+          "FieldName": "到着",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "ファイナンス.領収書.飛行機",
+      "Group": "ファイナンス",
+      "Category": "領収書",
+      "Name": "飛行機",
+      "OptionalUniqueIdentifier": null,
+      "TypeField": {
+        "FieldId": "ファイナンス.領収書.飛行機.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "ファイナンス.領収書.飛行機.金額",
+          "FieldName": "金額",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.領収書.飛行機.出発",
+          "FieldName": "出発",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.領収書.飛行機.到着",
+          "FieldName": "到着",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "ファイナンス.領収書.交際費",
+      "Group": "ファイナンス",
+      "Category": "領収書",
+      "Name": "交際費",
+      "OptionalUniqueIdentifier": null,
+      "TypeField": {
+        "FieldId": "ファイナンス.領収書.交際費.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "ファイナンス.領収書.交際費.金額",
+          "FieldName": "金額",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "ファイナンス.請求書.請求書A",
+      "Group": "ファイナンス",
+      "Category": "請求書",
+      "Name": "請求書A",
+      "OptionalUniqueIdentifier": null,
+      "TypeField": {
+        "FieldId": "ファイナンス.請求書.請求書A.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "ファイナンス.請求書.請求書A.会社名",
+          "FieldName": "会社名",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.請求書.請求書A.請求No",
+          "FieldName": "請求No.",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.請求書.請求書A.内訳",
+          "FieldName": "内訳",
+          "IsMultiValue": false,
+          "Type": "Table",
+          "DeriveFieldsFormat": "",
+          "Components": [
+            {
+              "FieldId": "ファイナンス.請求書.請求書A.内訳.摘要",
+              "FieldName": "摘要",
+              "IsMultiValue": false,
+              "Type": "Text",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": []
+            },
+            {
+              "FieldId": "ファイナンス.請求書.請求書A.内訳.数量",
+              "FieldName": "数量",
+              "IsMultiValue": false,
+              "Type": "Number",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": []
+            },
+            {
+              "FieldId": "ファイナンス.請求書.請求書A.内訳.単価",
+              "FieldName": "単価",
+              "IsMultiValue": false,
+              "Type": "Number",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": []
+            },
+            {
+              "FieldId": "ファイナンス.請求書.請求書A.内訳.金額",
+              "FieldName": "金額",
+              "IsMultiValue": false,
+              "Type": "Number",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": []
+            }
+          ],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.請求書.請求書A.合計",
+          "FieldName": "合計",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "ファイナンス.見積書.見積書",
+      "Group": "ファイナンス",
+      "Category": "見積書",
+      "Name": "見積書",
+      "OptionalUniqueIdentifier": null,
+      "TypeField": {
+        "FieldId": "ファイナンス.見積書.見積書.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "ファイナンス.見積書.見積書.発行日",
+          "FieldName": "発行日",
+          "IsMultiValue": false,
+          "Type": "Date",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.見積書.見積書.見積番号",
+          "FieldName": "見積番号",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.見積書.見積書.郵便番号",
+          "FieldName": "郵便番号",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.見積書.見積書.取引先会社住所",
+          "FieldName": "取引先会社住所",
+          "IsMultiValue": false,
+          "Type": "Address",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.見積書.見積書.会社名",
+          "FieldName": "会社名",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.見積書.見積書.お見積の有効期限",
+          "FieldName": "お見積の有効期限",
+          "IsMultiValue": false,
+          "Type": "Date",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.見積書.見積書.お見積金額（税込）",
+          "FieldName": "お見積金額（税込）",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.見積書.見積書.見積テーブル",
+          "FieldName": "見積テーブル",
+          "IsMultiValue": false,
+          "Type": "Table",
+          "DeriveFieldsFormat": "",
+          "Components": [
+            {
+              "FieldId": "ファイナンス.見積書.見積書.見積テーブル.内容",
+              "FieldName": "内容",
+              "IsMultiValue": false,
+              "Type": "Text",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": []
+            },
+            {
+              "FieldId": "ファイナンス.見積書.見積書.見積テーブル.数量",
+              "FieldName": "数量",
+              "IsMultiValue": false,
+              "Type": "Number",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": []
+            },
+            {
+              "FieldId": "ファイナンス.見積書.見積書.見積テーブル.単価（税抜）",
+              "FieldName": "単価（税抜）",
+              "IsMultiValue": false,
+              "Type": "Number",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": []
+            },
+            {
+              "FieldId": "ファイナンス.見積書.見積書.見積テーブル.消費税",
+              "FieldName": "消費税",
+              "IsMultiValue": false,
+              "Type": "Text",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": []
+            },
+            {
+              "FieldId": "ファイナンス.見積書.見積書.見積テーブル.小計（税抜）",
+              "FieldName": "小計（税抜）",
+              "IsMultiValue": false,
+              "Type": "Number",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": []
+            }
+          ],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.見積書.見積書.小計",
+          "FieldName": "小計",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.見積書.見積書.消費税",
+          "FieldName": "消費税",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.見積書.見積書.合計",
+          "FieldName": "合計",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "ファイナンス.見積書.見積書.備考",
+          "FieldName": "備考",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    }
+  ],
+  "Groups": [
+    {
+      "Name": "ファイナンス",
+      "Categories": [
+        "見積書",
+        "請求書",
+        "領収書"
+      ]
+    },
+    {
+      "Name": "マーケティング",
+      "Categories": [
+        "アンケート"
+      ]
+    }
+  ],
+  "SupportedLanguages": [
+    {
+      "Name": "Undetermined Language",
+      "Code": "und"
+    },
+    {
+      "Name": "Bulgarian",
+      "Code": "bul"
+    },
+    {
+      "Name": "Cantonese",
+      "Code": "yue"
+    },
+    {
+      "Name": "Danish",
+      "Code": "dan"
+    },
+    {
+      "Name": "Dutch",
+      "Code": "nld"
+    },
+    {
+      "Name": "English",
+      "Code": "eng"
+    },
+    {
+      "Name": "French",
+      "Code": "fra"
+    },
+    {
+      "Name": "Georgian",
+      "Code": "kat"
+    },
+    {
+      "Name": "German",
+      "Code": "deu"
+    },
+    {
+      "Name": "Greek",
+      "Code": "ell"
+    },
+    {
+      "Name": "Hebrew",
+      "Code": "heb"
+    },
+    {
+      "Name": "Hindi",
+      "Code": "hin"
+    },
+    {
+      "Name": "Italian",
+      "Code": "ita"
+    },
+    {
+      "Name": "Japanese",
+      "Code": "jpn"
+    },
+    {
+      "Name": "Korean",
+      "Code": "kor"
+    },
+    {
+      "Name": "Macedonian",
+      "Code": "mkd"
+    },
+    {
+      "Name": "Mandarin",
+      "Code": "zho"
+    },
+    {
+      "Name": "Marathi",
+      "Code": "mar"
+    },
+    {
+      "Name": "Norwegian",
+      "Code": "nor"
+    },
+    {
+      "Name": "Polish",
+      "Code": "pol"
+    },
+    {
+      "Name": "Portuguese",
+      "Code": "por"
+    },
+    {
+      "Name": "Romanian",
+      "Code": "ron"
+    },
+    {
+      "Name": "Russian",
+      "Code": "rus"
+    },
+    {
+      "Name": "Serbian",
+      "Code": "srp"
+    },
+    {
+      "Name": "Spanish",
+      "Code": "spa"
+    },
+    {
+      "Name": "Swedish",
+      "Code": "swe"
+    },
+    {
+      "Name": "Telugu",
+      "Code": "tel"
+    }
+  ]
+}

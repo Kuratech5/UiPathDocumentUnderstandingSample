@@ -1,0 +1,1146 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p2="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p4="http://schemas.uipath.com/workflow/activities/intelligentocr/training" xmlns:p5="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p6="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p7="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p8="http://schemas.uipath.com/workflow/activities/documentunderstanding-ml" xmlns:p9="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiaam="clr-namespace:UiPath.IntelligentOCR.Activities.Actions.Model;assembly=UiPath.IntelligentOCR.Activities" xmlns:uoa="clr-namespace:UiPath.OmniPage.Activities;assembly=UiPath.OmniPage.Activities" xmlns:upat="clr-namespace:UiPath.Persistence.Activities.Tasks;assembly=UiPath.Persistence.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="タスクの割り当てユーザー" Name="in_UserName" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Main.in_UserName>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.in_UserName>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>851,2745</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="36">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.Actions.Model</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Taxonomy</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.DataExtraction</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Classification</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Abbyy.Core.FlexiCapture</x:String>
+      <x:String>UiPath.Abbyy.Core.FlexiCapture.Enums</x:String>
+      <x:String>UiPath.Abbyy.Core.FlexiCapture.ValidationStationAdapters</x:String>
+      <x:String>UiPath.Persistence.Activities.Tasks</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OmniPage.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Abbyy.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Abbyy.Core</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="DocumentUnderstanding" sap:VirtualizedContainerService.HintSize="687,2948" sap2010:WorkflowViewState.IdRef="Sequence_84">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="pathDownloadFolder" />
+      <Variable x:TypeArguments="p9:DocumentTaxonomy" Name="docTaxonomy" />
+      <Variable x:TypeArguments="x:String" Name="docText" />
+      <Variable x:TypeArguments="p3:Document" Name="docObjectModel" />
+      <Variable x:TypeArguments="x:String" Name="pathInputFolder" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Document Understanding用のAPIキー" Name="keyAPI" />
+      <Variable x:TypeArguments="x:String" Name="pathDesktop" />
+      <Variable x:TypeArguments="scg:List(si:FileInfo)" Name="inputFiles" />
+      <Variable x:TypeArguments="x:String" Name="pathOutputFolder" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Orchestrator上のストレージバケット名です。" Name="bucketName" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="645,93" sap2010:WorkflowViewState.IdRef="LogMessage_74" Level="Info" Message="[&quot;Start：Document Understanding&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <Sequence DisplayName="※最初に確認してください。" sap:VirtualizedContainerService.HintSize="645,1482" sap2010:WorkflowViewState.IdRef="Sequence_85">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap2010:Annotation.AnnotationText="ここにDocument Understandingを利用するためのAPIキーを設定してください。&#xD;&#xA;ファイル内に直接書き込みたくない場合は、外部ファイルもしくはOrchestratorのアセット機能を利用して読み込むなどの実装をしてください。&#xD;&#xA;&#xD;&#xA;API key の取得方法は以下を参考にしてください。&#xD;&#xA;https://docs.uipath.com/automation-cloud/lang-ja/docs/about-licensing#section-document-understanding-api-key" DisplayName="【要変更】Document UnderstandingのAPI キー" sap:VirtualizedContainerService.HintSize="334,264" sap2010:WorkflowViewState.IdRef="Assign_30">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[keyAPI]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">keyAPI</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <Assign sap2010:Annotation.AnnotationText="Document Understanding のアクションを作るためにはOrchestratorのBucketを利用する必要があります。&#xD;&#xA;作成したバケット名を入れてください.&#xD;&#xA;&#xD;&#xA;バケットの作成方法については以下を参考にしてください。&#xD;&#xA;https://docs.uipath.com/orchestrator/lang-ja/v0/docs/about-storage-buckets" DisplayName="【要変更】 Bucket Name" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="Assign_31">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[bucketName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">DocumentUnderstandingTestBucket</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <ui:GetEnvironmentFolder sap2010:Annotation.AnnotationText="※このワークフローで読み込むドキュメントファイル/フォルダのパスについて&#xD;&#xA;&#xD;&#xA;・デスクトップ配下に以下の構成でフォルダを作成してください。&#xD;&#xA;Documents&#xD;&#xA;｜ー Input&#xD;&#xA;｜ー Output&#xD;&#xA;｜ー Download&#xD;&#xA;&#xD;&#xA;・本プロジェクトと同じGitHub Repositoryで公開しているDecumentsフォルダをそのままデスクトップに置けばOKです。" DisplayName="特殊フォルダーのパスを取得" FolderPath="[pathDesktop]" sap:VirtualizedContainerService.HintSize="334,250" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_2" SpecialFolder="Desktop">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetEnvironmentFolder>
+      <Assign sap2010:Annotation.AnnotationText="デスクトップ配下の&#xA;&quot;Documents\Input&quot;&#xA;を読込データの配置場所とする。" DisplayName="読込データのフォルダーパス" sap:VirtualizedContainerService.HintSize="334,120" sap2010:WorkflowViewState.IdRef="Assign_21">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[pathInputFolder]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(pathDesktop,"Documents\Input")]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <Assign sap2010:Annotation.AnnotationText="デスクトップ配下の&#xA;&quot;Documents\Output&quot;&#xA;を読込データの配置場所とする。" DisplayName="出力データのフォルダーパス" sap:VirtualizedContainerService.HintSize="334,120" sap2010:WorkflowViewState.IdRef="Assign_22">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[pathOutputFolder]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(pathDesktop,"Documents\Output")]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <Assign sap2010:Annotation.AnnotationText="デスクトップ配下の&#xA;&quot;Documents\Download&quot;&#xA;を読込データの配置場所とする。" DisplayName="ドキュメントのダウンロードフォルダーパス" sap:VirtualizedContainerService.HintSize="334,120" sap2010:WorkflowViewState.IdRef="Assign_23">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[pathDownloadFolder]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(pathDesktop,"Documents\Download")]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <Assign DisplayName="Inputフォルダ内のFileInfo 一覧を取得 " sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+        <Assign.To>
+          <OutArgument x:TypeArguments="scg:List(si:FileInfo)">[inputFiles]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="scg:List(si:FileInfo)">[New System.IO.DirectoryInfo(pathInputFolder).EnumerateFiles("*", System.IO.SearchOption.AllDirectories).ToList]</InArgument>
+        </Assign.Value>
+      </Assign>
+    </Sequence>
+    <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="645,93" sap2010:WorkflowViewState.IdRef="LogMessage_75" Level="Info" Message="[&quot;Start：Loading Taxonomy&quot;]" />
+    <p:LoadTaxonomy DisplayName="タクソノミーを読み込み" sap:VirtualizedContainerService.HintSize="645,68" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_2" Taxonomy="[docTaxonomy]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </p:LoadTaxonomy>
+    <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="645,93" sap2010:WorkflowViewState.IdRef="LogMessage_76" Level="Info" Message="[&quot;End：Loading Taxonomy&quot;]" />
+    <Flowchart sap2010:Annotation.AnnotationText="各ドキュメントファイルで処理を繰り返す。&#xD;&#xA;∵繰り返し系のアクティビティを利用すると、シリアライズできないなどのエラーが出るため。詳細は調査中。" DisplayName="各ドキュメントファイルで処理" sap:VirtualizedContainerService.HintSize="645,694" sap2010:WorkflowViewState.IdRef="Flowchart_3">
+      <Flowchart.Variables>
+        <Variable x:TypeArguments="x:Int32" Name="listLen" />
+        <Variable x:TypeArguments="x:Int32" Name="count" />
+      </Flowchart.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+          <av:Size x:Key="ShapeSize">60,75</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,107.5 299.895,107.5 299.895,127.5</av:PointCollection>
+          <x:Double x:Key="Width">611</x:Double>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Double x:Key="Height">614</x:Double>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Flowchart.StartNode>
+        <x:Reference>__ReferenceID4</x:Reference>
+      </Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID0">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">60,387</av:Point>
+            <av:Size x:Key="ShapeSize">200,68</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">160,455 160,520</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Sequence DisplayName="ドキュメント処理" sap:VirtualizedContainerService.HintSize="1474,9615" sap2010:WorkflowViewState.IdRef="Sequence_83">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="pathInputFile" />
+            <Variable x:TypeArguments="p5:ClassificationResult[]" Name="docClassificationResult" />
+            <Variable x:TypeArguments="p5:ExtractionResult" Name="docExtractResult" />
+            <Variable x:TypeArguments="sd1:DataSet" Name="docDataset" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="読込データのファイルフルパス" sap:VirtualizedContainerService.HintSize="1432,60" sap2010:WorkflowViewState.IdRef="Assign_27">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[pathInputFile]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[inputFiles(count).FullName]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="1432,93" sap2010:WorkflowViewState.IdRef="LogMessage_77" Level="Info" Message="[&quot;Start：Degitize&quot;]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+          <p:DigitizeDocument DegreeOfParallelism="1" DisplayName="ドキュメントをデジタル化" DocumentObjectModel="[docObjectModel]" DocumentPath="[pathInputFile]" DocumentText="[docText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="1432,298" sap2010:WorkflowViewState.IdRef="DigitizeDocument_7">
+            <p:DigitizeDocument.OCREngine>
+              <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                <ActivityFunc.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                </ActivityFunc.Argument>
+                <uoa:OmniPageOCR Output="{x:Null}" Scale="{x:Null}" Text="{x:Null}" BundleType="Extended" ComputeSkewAngle="False" DisplayName="OmniPage OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="312,22" sap2010:WorkflowViewState.IdRef="OmniPageOCR_7" Image="[Image]" Language="JPN" Profile="Scan" />
+              </ActivityFunc>
+            </p:DigitizeDocument.OCREngine>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </p:DigitizeDocument>
+          <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="1432,93" sap2010:WorkflowViewState.IdRef="LogMessage_78" Level="Info" Message="[&quot;End：Degitize&quot;]" />
+          <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="1432,93" sap2010:WorkflowViewState.IdRef="LogMessage_79" Level="Info" Message="[&quot;Start：Classify&quot;]" />
+          <p1:ClassifyDocumentScope ClassificationResults="[docClassificationResult]" DisplayName="ドキュメント分類スコープ" DocumentObjectModel="[docObjectModel]" DocumentPath="[pathInputFile]" DocumentText="[docText]" sap:VirtualizedContainerService.HintSize="1432,539" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_7" Taxonomy="[docTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIda25f854eacc4be6a2aee179edae6dd1&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;マーケティング.アンケート.イベント&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;マーケティング.アンケート.イベント&quot;,&quot;ClassifierDocumentTypeId&quot;:&quot;&quot;,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ファイナンス.領収書.交通費&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.領収書.交通費&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ファイナンス.領収書.飛行機&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.領収書.飛行機&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ファイナンス.領収書.交際費&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.領収書.交際費&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ファイナンス.請求書.請求書A&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.請求書.請求書A&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ファイナンス.見積書.見積書&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.見積書.見積書&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}},&quot;UIc7b1297c497e461a838f61947f3bca08&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;マーケティング.アンケート.イベント&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;マーケティング.アンケート.イベント&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ファイナンス.領収書.交通費&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.領収書.交通費&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ファイナンス.領収書.飛行機&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.領収書.飛行機&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ファイナンス.領収書.交際費&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.領収書.交際費&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ファイナンス.請求書.請求書A&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.請求書.請求書A&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ファイナンス.見積書.見積書&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.見積書.見積書&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UIc7b1297c497e461a838f61947f3bca08&quot;:&quot;0&quot;,&quot;UIda25f854eacc4be6a2aee179edae6dd1&quot;:&quot;90&quot;}}">
+            <p1:ClassifyDocumentScope.Classifiers>
+              <p1:KeywordBasedClassifier HumanValidatedData="{x:Null}" LearningData="{x:Null}" DisplayName="キーワード ベースの分類子" sap:VirtualizedContainerService.HintSize="234,212" sap2010:WorkflowViewState.IdRef="KeywordBasedClassifier_7" LearningFilePath="Classifier\classificationBasedOnKeyword.json" PersistenceId="UIda25f854eacc4be6a2aee179edae6dd1">
+                <p1:KeywordBasedClassifier.ClassifierResult>
+                  <OutArgument x:TypeArguments="p2:ClassifierResult">
+                    <DelegateArgumentReference x:TypeArguments="p2:ClassifierResult">
+                      <DelegateOutArgument x:TypeArguments="p2:ClassifierResult" Name="ClassificationResult" />
+                    </DelegateArgumentReference>
+                  </OutArgument>
+                </p1:KeywordBasedClassifier.ClassifierResult>
+                <p1:KeywordBasedClassifier.DocumentObjectModel>
+                  <InArgument x:TypeArguments="p3:Document">
+                    <DelegateArgumentValue x:TypeArguments="p3:Document">
+                      <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p1:KeywordBasedClassifier.DocumentObjectModel>
+                <p1:KeywordBasedClassifier.DocumentPath>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p1:KeywordBasedClassifier.DocumentPath>
+                <p1:KeywordBasedClassifier.DocumentText>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p1:KeywordBasedClassifier.DocumentText>
+                <p1:KeywordBasedClassifier.DocumentTypes>
+                  <InArgument x:TypeArguments="p2:ClassifierDocumentType[]">
+                    <DelegateArgumentValue x:TypeArguments="p2:ClassifierDocumentType[]">
+                      <DelegateInArgument x:TypeArguments="p2:ClassifierDocumentType[]" Name="DocumentTypes" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p1:KeywordBasedClassifier.DocumentTypes>
+              </p1:KeywordBasedClassifier>
+              <p1:IntelligentKeywordClassifier LearningData="{x:Null}" ApiKey="[keyAPI]" DisplayName="インテリジェント キーワード分類子" Endpoint="https://intelligentkeywords.uipath.com/" sap:VirtualizedContainerService.HintSize="234,212" sap2010:WorkflowViewState.IdRef="IntelligentKeywordClassifier_7" LearningFilePath="Classifier\classificationBasedOnIntelligentKeyword.json" PersistenceId="UIc7b1297c497e461a838f61947f3bca08">
+                <p1:IntelligentKeywordClassifier.ClassifierResult>
+                  <OutArgument x:TypeArguments="p2:ClassifierResult">
+                    <DelegateArgumentReference x:TypeArguments="p2:ClassifierResult">
+                      <DelegateOutArgument x:TypeArguments="p2:ClassifierResult" Name="ClassificationResult" />
+                    </DelegateArgumentReference>
+                  </OutArgument>
+                </p1:IntelligentKeywordClassifier.ClassifierResult>
+                <p1:IntelligentKeywordClassifier.DocumentObjectModel>
+                  <InArgument x:TypeArguments="p3:Document">
+                    <DelegateArgumentValue x:TypeArguments="p3:Document">
+                      <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p1:IntelligentKeywordClassifier.DocumentObjectModel>
+                <p1:IntelligentKeywordClassifier.DocumentPath>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p1:IntelligentKeywordClassifier.DocumentPath>
+                <p1:IntelligentKeywordClassifier.DocumentText>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p1:IntelligentKeywordClassifier.DocumentText>
+                <p1:IntelligentKeywordClassifier.DocumentTypes>
+                  <InArgument x:TypeArguments="p2:ClassifierDocumentType[]">
+                    <DelegateArgumentValue x:TypeArguments="p2:ClassifierDocumentType[]">
+                      <DelegateInArgument x:TypeArguments="p2:ClassifierDocumentType[]" Name="DocumentTypes" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p1:IntelligentKeywordClassifier.DocumentTypes>
+              </p1:IntelligentKeywordClassifier>
+            </p1:ClassifyDocumentScope.Classifiers>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </p1:ClassifyDocumentScope>
+          <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="1432,93" sap2010:WorkflowViewState.IdRef="LogMessage_80" Level="Info" Message="[&quot;End：Classify&quot;]" />
+          <If sap2010:Annotation.AnnotationText="信頼度の実際の値は 0 ~ 1 なので注意。" Condition="[docClassificationResult.Any AndAlso docClassificationResult(0).Confidence &gt; 0.6]" DisplayName="条件分岐：分類結果があるか？AND 信頼度が60以上か？" sap:VirtualizedContainerService.HintSize="1432,3310" sap2010:WorkflowViewState.IdRef="If_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_81" Level="Info" Message="[&quot;分類検証不要&quot;]" />
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="分類結果がないもしくは信頼度が60以下の場合、分類検証" sap:VirtualizedContainerService.HintSize="652,3129" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="610,93" sap2010:WorkflowViewState.IdRef="LogMessage_82" Level="Info" Message="[&quot;Start：Classification Validation&quot;]" />
+                <ui:CommentOut DisplayName="コメント アウト" sap:VirtualizedContainerService.HintSize="610,52" sap2010:WorkflowViewState.IdRef="CommentOut_29">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="無視されたアクティビティ" sap:VirtualizedContainerService.HintSize="418,557" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence DisplayName="プロセス実行端末上で分類検証" sap:VirtualizedContainerService.HintSize="242,160" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <p1:PresentClassificationStation AutomaticClassificationResults="[docClassificationResult]" DisplayName="分類ステーションを表示" DocumentObjectModel="[docObjectModel]" DocumentPath="[pathInputFile]" DocumentText="[docText]" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="PresentClassificationStation_7" Taxonomy="[docTaxonomy]" ValidatedClassificationResults="[docClassificationResult]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </p1:PresentClassificationStation>
+                      </Sequence>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CommentOut>
+                <Sequence DisplayName="Action Centerで分類検証" sap:VirtualizedContainerService.HintSize="610,2004" sap2010:WorkflowViewState.IdRef="Sequence_75">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="uiaam:DocumentClassificationActionData" Name="docClassificationActionObj" />
+                    <Variable x:TypeArguments="upat:TaskUserAssignment" Default="[new TaskUserAssignment]" Name="taskUserAssignment" />
+                    <Variable x:TypeArguments="scg:List(upat:TaskUserAssignment)" Default="[New List(Of taskUserAssignment)]" Name="taskUserAssignmentList" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <p:CreateDocumentClassificationAction ActionCatalog="{x:Null}" FolderPath="{x:Null}" TimeoutMs="{x:Null}" ActionOutput="[docClassificationActionObj]" ActionPriority="Medium" ActionTitle="ドキュメントの分類依頼" AutomaticClassificationResults="[docClassificationResult]" BucketName="[bucketName]" DisplayName="Create Document Classification Action" DocumentObjectModel="[docObjectModel]" DocumentPath="[pathInputFile]" DocumentText="[docText]" sap:VirtualizedContainerService.HintSize="478,373" sap2010:WorkflowViewState.IdRef="CreateDocumentClassificationAction_7" Taxonomy="[docTaxonomy]">
+                    <p:CreateDocumentClassificationAction.BucketFolderPath>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </p:CreateDocumentClassificationAction.BucketFolderPath>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </p:CreateDocumentClassificationAction>
+                  <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="478,93" sap2010:WorkflowViewState.IdRef="LogMessage_83" Level="Info" Message="[&quot;Task Created&quot;]" />
+                  <Sequence DisplayName="タスク割り当て処理" sap:VirtualizedContainerService.HintSize="478,695" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:MultipleAssign sap2010:Annotation.AnnotationText="TaskIdとTaskUserOrMailをアクションオブジェクトからセットする" DisplayName="複数代入" sap:VirtualizedContainerService.HintSize="338,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+                      <ui:MultipleAssign.AssignOperations>
+                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="s:Nullable(x:Int64)">[taskUserAssignment.TaskId]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="s:Nullable(x:Int64)">[docClassificationActionObj.Id]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[taskUserAssignment.UserNameOrEmail]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[in_UserName]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                        </scg:List>
+                      </ui:MultipleAssign.AssignOperations>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:MultipleAssign>
+                    <AddToCollection x:TypeArguments="upat:TaskUserAssignment" sap2010:Annotation.AnnotationText="taskUserAssignmentListにtaskUserAssignmentを追加" Collection="[taskUserAssignmentList]" DisplayName="コレクションに追加：taskUserAssignmentList" sap:VirtualizedContainerService.HintSize="338,66" sap2010:WorkflowViewState.IdRef="AddToCollection`1_7" Item="[taskUserAssignment]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </AddToCollection>
+                    <upat:AssignTasks FailedTaskAssignments="{x:Null}" TimeoutMs="{x:Null}" DisplayName="タスクを割り当て：分類依頼" sap:VirtualizedContainerService.HintSize="338,164" sap2010:WorkflowViewState.IdRef="AssignTasks_7" TaskUserAssignments="[taskUserAssignmentList]" />
+                    <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="338,93" sap2010:WorkflowViewState.IdRef="LogMessage_84" Level="Info" Message="[&quot;Task Assigned&quot;]" />
+                  </Sequence>
+                  <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="478,93" sap2010:WorkflowViewState.IdRef="LogMessage_85" Level="Info" Message="[&quot;Wait for task completion…&quot;]" />
+                  <p:WaitForDocumentClassificationActionAndResume ActionOutput="{x:Null}" StatusMessage="{x:Null}" TimeoutMs="{x:Null}" WaitItemDataObject="{x:Null}" ActionInput="[docClassificationActionObj]" AutomaticClassificationResults="[docClassificationResult]" DisplayName="Wait For Document Classification Action And Resume" DocumentObjectModel="[docObjectModel]" DocumentPath="[pathInputFile]" DocumentText="[docText]" DownloadFolderPath="[pathDownloadFolder]" sap:VirtualizedContainerService.HintSize="478,365" sap2010:WorkflowViewState.IdRef="WaitForDocumentClassificationActionAndResume_7" RemoveDataFromStorage="False" Taxonomy="[docTaxonomy]" ValidatedClassificationResults="[docClassificationResult]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </p:WaitForDocumentClassificationActionAndResume>
+                  <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="478,93" sap2010:WorkflowViewState.IdRef="LogMessage_86" Level="Info" Message="[&quot;End：Classification Validation&quot;]" />
+                </Sequence>
+                <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="610,93" sap2010:WorkflowViewState.IdRef="LogMessage_87" Level="Info" Message="[&quot;Resume&quot;]" />
+                <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="610,93" sap2010:WorkflowViewState.IdRef="LogMessage_88" Level="Info" Message="[&quot;Start：Train Classifier&quot;]" />
+                <p4:TrainClassifiersScope HumanValidatedData="{x:Null}" DisplayName="分類子トレーニング スコープ" DocumentObjectModel="[docObjectModel]" DocumentPath="[pathInputFile]" DocumentText="[docText]" sap:VirtualizedContainerService.HintSize="610,369" HumanValidatedClassificationData="[docClassificationResult]" sap2010:WorkflowViewState.IdRef="TrainClassifiersScope_8" Taxonomy="[docTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI278eec7ee98549c4aa3c164c228a37c7&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;マーケティング.アンケート.イベント&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;マーケティング.アンケート.イベント&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ファイナンス.領収書.交通費&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.領収書.交通費&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;ファイナンス.領収書.飛行機&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.領収書.飛行機&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;ファイナンス.領収書.交際費&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.領収書.交際費&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;ファイナンス.請求書.請求書A&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.請求書.請求書A&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;ファイナンス.見積書.見積書&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.見積書.見積書&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}},&quot;UIbd9aa6da3c334d8d9a2d0b948cb7bf3f&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;マーケティング.アンケート.イベント&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;マーケティング.アンケート.イベント&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ファイナンス.領収書.交通費&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.領収書.交通費&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;ファイナンス.領収書.飛行機&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.領収書.飛行機&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;ファイナンス.領収書.交際費&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.領収書.交際費&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;ファイナンス.請求書.請求書A&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.請求書.請求書A&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;ファイナンス.見積書.見積書&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ファイナンス.見積書.見積書&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UI278eec7ee98549c4aa3c164c228a37c7&quot;:&quot;0&quot;,&quot;UIbd9aa6da3c334d8d9a2d0b948cb7bf3f&quot;:&quot;0&quot;}}">
+                  <p4:TrainClassifiersScope.Trainables>
+                    <p4:KeywordBasedClassifierTrainer LearningData="{x:Null}" DisplayName="キーワード ベースの分類子トレーナー" sap:VirtualizedContainerService.HintSize="234,114" sap2010:WorkflowViewState.IdRef="KeywordBasedClassifierTrainer_8" LearningFilePath="Classifier\classificationBasedOnKeyword.json" PersistenceId="UI278eec7ee98549c4aa3c164c228a37c7">
+                      <p4:KeywordBasedClassifierTrainer.DocumentObjectModel>
+                        <InArgument x:TypeArguments="p3:Document">
+                          <DelegateArgumentValue x:TypeArguments="p3:Document">
+                            <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p4:KeywordBasedClassifierTrainer.DocumentObjectModel>
+                      <p4:KeywordBasedClassifierTrainer.DocumentPath>
+                        <InArgument x:TypeArguments="x:String">
+                          <DelegateArgumentValue x:TypeArguments="x:String">
+                            <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p4:KeywordBasedClassifierTrainer.DocumentPath>
+                      <p4:KeywordBasedClassifierTrainer.DocumentText>
+                        <InArgument x:TypeArguments="x:String">
+                          <DelegateArgumentValue x:TypeArguments="x:String">
+                            <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p4:KeywordBasedClassifierTrainer.DocumentText>
+                      <p4:KeywordBasedClassifierTrainer.HumanValidatedData>
+                        <InArgument x:TypeArguments="p5:ExtractionResult[]">
+                          <DelegateArgumentValue x:TypeArguments="p5:ExtractionResult[]">
+                            <DelegateInArgument x:TypeArguments="p5:ExtractionResult[]" Name="HumanValidatedData" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p4:KeywordBasedClassifierTrainer.HumanValidatedData>
+                    </p4:KeywordBasedClassifierTrainer>
+                    <p4:IntelligentKeywordClassifierTrainer LearningData="{x:Null}" DisplayName="インテリジェント キーワード分類子トレーナー" sap:VirtualizedContainerService.HintSize="234,114" sap2010:WorkflowViewState.IdRef="IntelligentKeywordClassifierTrainer_8" LearningFilePath="Classifier\classificationBasedOnIntelligentKeyword.json" PersistenceId="UIbd9aa6da3c334d8d9a2d0b948cb7bf3f">
+                      <p4:IntelligentKeywordClassifierTrainer.DocumentObjectModel>
+                        <InArgument x:TypeArguments="p3:Document">
+                          <DelegateArgumentValue x:TypeArguments="p3:Document">
+                            <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p4:IntelligentKeywordClassifierTrainer.DocumentObjectModel>
+                      <p4:IntelligentKeywordClassifierTrainer.DocumentPath>
+                        <InArgument x:TypeArguments="x:String">
+                          <DelegateArgumentValue x:TypeArguments="x:String">
+                            <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p4:IntelligentKeywordClassifierTrainer.DocumentPath>
+                      <p4:IntelligentKeywordClassifierTrainer.DocumentText>
+                        <InArgument x:TypeArguments="x:String">
+                          <DelegateArgumentValue x:TypeArguments="x:String">
+                            <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p4:IntelligentKeywordClassifierTrainer.DocumentText>
+                      <p4:IntelligentKeywordClassifierTrainer.HumanValidatedData>
+                        <InArgument x:TypeArguments="p5:ExtractionResult[]">
+                          <DelegateArgumentValue x:TypeArguments="p5:ExtractionResult[]">
+                            <DelegateInArgument x:TypeArguments="p5:ExtractionResult[]" Name="HumanValidatedData" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p4:IntelligentKeywordClassifierTrainer.HumanValidatedData>
+                    </p4:IntelligentKeywordClassifierTrainer>
+                  </p4:TrainClassifiersScope.Trainables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </p4:TrainClassifiersScope>
+                <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="610,93" sap2010:WorkflowViewState.IdRef="LogMessage_89" Level="Info" Message="[&quot;End：Train Classifier&quot;]" />
+              </Sequence>
+            </If.Else>
+          </If>
+          <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="1432,93" sap2010:WorkflowViewState.IdRef="LogMessage_90" Level="Info" Message="[&quot;Start：Extract Data&quot;]" />
+          <p6:DataExtractionScope DocumentTypeId="{x:Null}" ClassificationResult="[docClassificationResult(0)]" DisplayName="データ抽出スコープ" DocumentObjectModel="[docObjectModel]" DocumentPath="[pathInputFile]" DocumentText="[docText]" ExtractionResult="[docExtractResult]" FormatValuesIfPossible="True" sap:VirtualizedContainerService.HintSize="1432,522" sap2010:WorkflowViewState.IdRef="DataExtractionScope_7" Taxonomy="[docTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIde58a314bf7f454a8a163eddfd8650f3&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;マーケティング.アンケート.イベント&quot;:{&quot;FieldMappings&quot;:{&quot;マーケティング.アンケート.イベント.氏名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.氏名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.メールアドレス&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.メールアドレス&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.電話番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.電話番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.イベントの満足度&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.イベントの満足度&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.ニュースレターを購読する&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.ニュースレターを購読する&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.コメント&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.コメント&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.交通費&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.交通費.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.交通費.出発&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.出発&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.交通費.到着&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.到着&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.飛行機&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.飛行機.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.飛行機.出発&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.出発&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.飛行機.到着&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.到着&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.交際費&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.交際費.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交際費.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.請求書.請求書A&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.請求書.請求書A.会社名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.会社名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.請求No&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.請求No&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳.摘要&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.摘要&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳.数量&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.数量&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳.単価&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.単価&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.合計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.合計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.見積書.見積書&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.見積書.見積書.発行日&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.発行日&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.見積番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.郵便番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.郵便番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.取引先会社住所&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.取引先会社住所&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.会社名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.会社名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.お見積の有効期限&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.お見積の有効期限&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.お見積金額（税込）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.お見積金額（税込）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.見積テーブル&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.内容&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.内容&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.数量&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.数量&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.単価（税抜）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.単価（税抜）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.消費税&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.消費税&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.小計（税抜）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.小計（税抜）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.小計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.小計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.消費税&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.消費税&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.合計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.合計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.備考&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.備考&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null}}},&quot;UId9ceaac864f247a8b2891138458190ee&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;マーケティング.アンケート.イベント&quot;:{&quot;FieldMappings&quot;:{&quot;マーケティング.アンケート.イベント.氏名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.氏名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.メールアドレス&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.メールアドレス&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.電話番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.電話番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.イベントの満足度&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.イベントの満足度&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.ニュースレターを購読する&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.ニュースレターを購読する&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.コメント&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.コメント&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.交通費&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.交通費.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.交通費.出発&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.出発&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.交通費.到着&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.到着&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.飛行機&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.飛行機.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.飛行機.出発&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.出発&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.飛行機.到着&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.到着&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.交際費&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.交際費.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交際費.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.請求書.請求書A&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.請求書.請求書A.会社名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.会社名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.請求No&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.請求No&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳.摘要&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.摘要&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳.数量&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.数量&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳.単価&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.単価&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.合計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.合計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.見積書.見積書&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.見積書.見積書.発行日&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.発行日&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.郵便番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.郵便番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.取引先会社住所&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.取引先会社住所&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.会社名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.会社名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.お見積の有効期限&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.お見積の有効期限&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.お見積金額（税込）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.お見積金額（税込）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.内容&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.内容&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.数量&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.数量&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.単価（税抜）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.単価（税抜）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.消費税&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.消費税&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.小計（税抜）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.小計（税抜）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.小計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.小計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.消費税&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.消費税&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.合計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.合計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.備考&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.備考&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null}}},&quot;UI0861bc96a4904806a5dd7036e95eee3e&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;マーケティング.アンケート.イベント&quot;:{&quot;FieldMappings&quot;:{&quot;マーケティング.アンケート.イベント.氏名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.氏名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;マーケティング.アンケート.イベント.メールアドレス&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.メールアドレス&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;マーケティング.アンケート.イベント.電話番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.電話番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;マーケティング.アンケート.イベント.イベントの満足度&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.イベントの満足度&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;マーケティング.アンケート.イベント.ニュースレターを購読する&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.ニュースレターを購読する&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;マーケティング.アンケート.イベント.コメント&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.コメント&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.交通費&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.交通費.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.領収書.交通費.出発&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.出発&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.領収書.交通費.到着&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.到着&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.飛行機&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.飛行機.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.領収書.飛行機.出発&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.出発&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.領収書.飛行機.到着&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.到着&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.交際費&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.交際費.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交際費.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.請求書.請求書A&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.請求書.請求書A.会社名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.会社名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.請求No&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.請求No&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.内訳&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.内訳.摘要&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.摘要&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.内訳.数量&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.数量&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.内訳.単価&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.単価&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.内訳.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.合計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.合計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.見積書.見積書&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.見積書.見積書.発行日&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.発行日&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.見積番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.郵便番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.郵便番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.取引先会社住所&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.取引先会社住所&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.会社名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.会社名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.お見積の有効期限&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.お見積の有効期限&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.お見積金額（税込）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.お見積金額（税込）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.見積テーブル&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.見積テーブル.内容&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.内容&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.見積テーブル.数量&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.数量&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.見積テーブル.単価（税抜）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.単価（税抜）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.見積テーブル.消費税&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.消費税&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.見積テーブル.小計（税抜）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.小計（税抜）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.小計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.小計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.消費税&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.消費税&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.合計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.合計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.見積書.見積書.備考&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.備考&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null}}},&quot;UI502ce408e2ee41a8be42f5e5850c700f&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;マーケティング.アンケート.イベント&quot;:{&quot;FieldMappings&quot;:{&quot;マーケティング.アンケート.イベント.氏名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.氏名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.メールアドレス&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.メールアドレス&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.電話番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.電話番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.イベントの満足度&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.イベントの満足度&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.ニュースレターを購読する&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.ニュースレターを購読する&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.コメント&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.コメント&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.交通費&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.交通費.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.領収書.交通費.出発&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.出発&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.領収書.交通費.到着&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.到着&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.飛行機&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.飛行機.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.飛行機.出発&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.出発&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.飛行機.到着&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.到着&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.交際費&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.交際費.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交際費.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.請求書.請求書A&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.請求書.請求書A.会社名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.会社名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.請求No&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.請求No&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳.摘要&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.摘要&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳.数量&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.数量&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳.単価&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.単価&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.合計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.合計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.見積書.見積書&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.見積書.見積書.発行日&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.発行日&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.郵便番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.郵便番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.取引先会社住所&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.取引先会社住所&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.会社名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.会社名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.お見積の有効期限&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.お見積の有効期限&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.お見積金額（税込）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.お見積金額（税込）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.内容&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.内容&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.数量&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.数量&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.単価（税抜）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.単価（税抜）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.消費税&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.消費税&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.小計（税抜）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.小計（税抜）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.小計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.小計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.消費税&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.消費税&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.合計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.合計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.備考&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.備考&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null}}},&quot;UIc4a3e20d77b24409b09fc851f5d2030b&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;マーケティング.アンケート.イベント&quot;:{&quot;FieldMappings&quot;:{&quot;マーケティング.アンケート.イベント.氏名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.氏名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.メールアドレス&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.メールアドレス&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.電話番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.電話番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.イベントの満足度&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.イベントの満足度&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.ニュースレターを購読する&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.ニュースレターを購読する&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.コメント&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.コメント&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.交通費&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.交通費.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.交通費.出発&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.出発&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.交通費.到着&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.到着&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.飛行機&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.飛行機.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.飛行機.出発&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.出発&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.飛行機.到着&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.到着&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.交際費&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.交際費.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交際費.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.請求書.請求書A&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.請求書.請求書A.会社名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.会社名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.請求No&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.請求No&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.内訳&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.内訳.摘要&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.摘要&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.内訳.数量&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.数量&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.内訳.単価&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.単価&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.内訳.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.合計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.合計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.見積書.見積書&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.見積書.見積書.発行日&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.発行日&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.郵便番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.郵便番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.取引先会社住所&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.取引先会社住所&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.会社名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.会社名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.お見積の有効期限&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.お見積の有効期限&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.お見積金額（税込）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.お見積金額（税込）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.内容&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.内容&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.数量&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.数量&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.単価（税抜）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.単価（税抜）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.消費税&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.消費税&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.小計（税抜）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.小計（税抜）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.小計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.小計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.消費税&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.消費税&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.合計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.合計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.備考&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.備考&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UIde58a314bf7f454a8a163eddfd8650f3&quot;:&quot;90&quot;,&quot;UIc4a3e20d77b24409b09fc851f5d2030b&quot;:&quot;0&quot;,&quot;UI0861bc96a4904806a5dd7036e95eee3e&quot;:&quot;0&quot;,&quot;UI502ce408e2ee41a8be42f5e5850c700f&quot;:&quot;0&quot;,&quot;UId9ceaac864f247a8b2891138458190ee&quot;:&quot;90&quot;},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UIde58a314bf7f454a8a163eddfd8650f3&quot;:[],&quot;UId9ceaac864f247a8b2891138458190ee&quot;:[],&quot;UI0861bc96a4904806a5dd7036e95eee3e&quot;:[],&quot;UI502ce408e2ee41a8be42f5e5850c700f&quot;:[],&quot;UIc4a3e20d77b24409b09fc851f5d2030b&quot;:[]}}">
+            <p6:DataExtractionScope.Extractors>
+              <p6:FormExtractor SerializedSignatureFields="{x:Null}" ApiKey="[keyAPI]" DisplayName="フォーム抽出子" Endpoint="https://formextractor.uipath.com/" sap:VirtualizedContainerService.HintSize="234,195" sap2010:WorkflowViewState.IdRef="FormExtractor_7" MinOverlapPercentage="65" PersistenceId="UIde58a314bf7f454a8a163eddfd8650f3" SerializedSettings="{}{&quot;DocTypeSettings&quot;:[{&quot;DocumentTypeId&quot;:&quot;マーケティング.アンケート.イベント&quot;,&quot;SignatureFields&quot;:[],&quot;HandwritingFields&quot;:[],&quot;BooleanSynonymsForYes&quot;:[&quot;Yes&quot;,&quot;X&quot;,&quot;V&quot;,&quot;✓&quot;,&quot;✔&quot;],&quot;BooleanSynonymsForNo&quot;:[&quot;No&quot;]}]}" SerializedTemplates="[{&quot;DocumentTypeId&quot;:&quot;マーケティング.アンケート.イベント&quot;,&quot;FormId&quot;:&quot;41bbbb84&quot;,&quot;FormName&quot;:&quot;アンケートイベントA&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,595.0,841.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;&lt;氏名&gt;&quot;,&quot;Box&quot;:[192.2869,134.18,39.8439,11.04]},{&quot;Text&quot;:&quot;&lt;メールアドレス&gt;&quot;,&quot;Box&quot;:[270.5569,134.18,95.0631,11.04]},{&quot;Text&quot;:&quot;&lt;電話番号&gt;&quot;,&quot;Box&quot;:[329.5969,134.18,61.9124,11.04]},{&quot;Text&quot;:&quot;&lt;イベントの満足度&gt;&quot;,&quot;Box&quot;:[388.6369,134.18,106.1069,11.04]},{&quot;Text&quot;:&quot;＜コメント＞&quot;,&quot;Box&quot;:[505.2969,134.18,66.24,11.04]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;マーケティング.アンケート.イベント.氏名&quot;,&quot;Box&quot;:[210.974,134.0619,324.7397,34.1831]},{&quot;Field&quot;:&quot;マーケティング.アンケート.イベント.メールアドレス&quot;,&quot;Box&quot;:[289.4883,133.5278,325.8079,14.421]},{&quot;Field&quot;:&quot;マーケティング.アンケート.イベント.電話番号&quot;,&quot;Box&quot;:[348.2406,133.5278,326.342,15.4892]},{&quot;Field&quot;:&quot;マーケティング.アンケート.イベント.イベントの満足度&quot;,&quot;Box&quot;:[406.9928,409.1293,50.7406,34.7172]},{&quot;Field&quot;:&quot;マーケティング.アンケート.イベント.ニュースレターを購読する&quot;,&quot;Box&quot;:[468.4156,136.1984,5.8752,6.9434]},{&quot;Field&quot;:&quot;マーケティング.アンケート.イベント.コメント&quot;,&quot;Box&quot;:[523.9632,133.5278,325.8079,91.8671]}],&quot;Tables&quot;:[]}]},{&quot;DocumentTypeId&quot;:&quot;ファイナンス.見積書.見積書&quot;,&quot;FormId&quot;:&quot;26fcb4ca&quot;,&quot;FormName&quot;:&quot;見積書&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,595.0,841.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;内容&quot;,&quot;Box&quot;:[372.7909,123.02,16.08,8.04]},{&quot;Text&quot;:&quot;見積書&quot;,&quot;Box&quot;:[81.1671,273.65,47.88,15.96]},{&quot;Text&quot;:&quot;発行日&quot;,&quot;Box&quot;:[133.2409,365.59,24.12,8.04]},{&quot;Text&quot;:&quot;見積番号&quot;,&quot;Box&quot;:[151.7209,365.59,32.16,8.04]},{&quot;Text&quot;:&quot;お見積の有効期限&quot;,&quot;Box&quot;:[318.0709,398.71,64.32,8.04]},{&quot;Text&quot;:&quot;数量&quot;,&quot;Box&quot;:[373.2709,256.25,16.08,8.04]},{&quot;Text&quot;:&quot;消費税&quot;,&quot;Box&quot;:[373.2709,385.51,24.12,8.04]},{&quot;Text&quot;:&quot;備考&quot;,&quot;Box&quot;:[735.3569,32.52,16.08,8.04]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.発行日&quot;,&quot;Box&quot;:[126.5844,447.0512,90.7989,16.5575]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.見積番号&quot;,&quot;Box&quot;:[148.4829,446.5171,90.2648,14.421]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.郵便番号&quot;,&quot;Box&quot;:[132.4596,40.5925,88.1284,10.1481]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.取引先会社住所&quot;,&quot;Box&quot;:[150.0853,30.9785,260.6463,14.9551]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.会社名&quot;,&quot;Box&quot;:[179.9955,31.5126,259.044,20.8303]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.お見積の有効期限&quot;,&quot;Box&quot;:[332.2172,364.798,129.789,14.9551]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.お見積金額（税込）&quot;,&quot;Box&quot;:[314.0575,32.0467,196.0189,33.1149]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.小計&quot;,&quot;Box&quot;:[658.0251,431.5619,129.789,14.9551]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.消費税&quot;,&quot;Box&quot;:[676.719,432.0961,129.2549,14.9551]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.合計&quot;,&quot;Box&quot;:[695.4129,431.5619,129.789,14.421]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.備考&quot;,&quot;Box&quot;:[750.4264,32.0467,529.3043,33.649]}],&quot;Tables&quot;:[{&quot;FieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル&quot;,&quot;Headers&quot;:[{&quot;FieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.内容&quot;,&quot;Box&quot;:[384.2931,26.9726,203.0,1.0]},{&quot;FieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.数量&quot;,&quot;Box&quot;:[384.2931,229.1715,66.8012,1.0]},{&quot;FieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.単価（税抜）&quot;,&quot;Box&quot;:[384.2931,295.1715,66.8012,1.0]},{&quot;FieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.消費税&quot;,&quot;Box&quot;:[384.2931,361.1715,68.8012,1.0]},{&quot;FieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.小計（税抜）&quot;,&quot;Box&quot;:[384.2931,429.1715,132.8012,1.0]}],&quot;Cells&quot;:[{&quot;Row&quot;:0,&quot;Column&quot;:0,&quot;Box&quot;:[384.4919,26.9726,203.0,19.8012]},{&quot;Row&quot;:0,&quot;Column&quot;:1,&quot;Box&quot;:[384.4919,229.1715,66.8012,19.8012]},{&quot;Row&quot;:0,&quot;Column&quot;:2,&quot;Box&quot;:[384.4919,295.1715,66.8012,19.8012]},{&quot;Row&quot;:0,&quot;Column&quot;:3,&quot;Box&quot;:[384.4919,361.1715,68.8012,19.8012]},{&quot;Row&quot;:0,&quot;Column&quot;:4,&quot;Box&quot;:[384.4919,429.1715,132.8012,19.8012]},{&quot;Row&quot;:1,&quot;Column&quot;:0,&quot;Box&quot;:[403.4919,26.9726,203.0,19.8012]},{&quot;Row&quot;:1,&quot;Column&quot;:1,&quot;Box&quot;:[403.4919,229.1715,66.8012,19.8012]},{&quot;Row&quot;:1,&quot;Column&quot;:2,&quot;Box&quot;:[403.4919,295.1715,66.8012,19.8012]},{&quot;Row&quot;:1,&quot;Column&quot;:3,&quot;Box&quot;:[403.4919,361.1715,68.8012,19.8012]},{&quot;Row&quot;:1,&quot;Column&quot;:4,&quot;Box&quot;:[403.4919,429.1715,132.8012,19.8012]},{&quot;Row&quot;:2,&quot;Column&quot;:0,&quot;Box&quot;:[422.4919,26.9726,203.0,18.8012]},{&quot;Row&quot;:2,&quot;Column&quot;:1,&quot;Box&quot;:[422.4919,229.1715,66.8012,18.8012]},{&quot;Row&quot;:2,&quot;Column&quot;:2,&quot;Box&quot;:[422.4919,295.1715,66.8012,18.8012]},{&quot;Row&quot;:2,&quot;Column&quot;:3,&quot;Box&quot;:[422.4919,361.1715,68.8012,18.8012]},{&quot;Row&quot;:2,&quot;Column&quot;:4,&quot;Box&quot;:[422.4919,429.1715,132.8012,18.8012]},{&quot;Row&quot;:3,&quot;Column&quot;:0,&quot;Box&quot;:[440.4919,26.9726,203.0,18.8012]},{&quot;Row&quot;:3,&quot;Column&quot;:1,&quot;Box&quot;:[440.4919,229.1715,66.8012,18.8012]},{&quot;Row&quot;:3,&quot;Column&quot;:2,&quot;Box&quot;:[440.4919,295.1715,66.8012,18.8012]},{&quot;Row&quot;:3,&quot;Column&quot;:3,&quot;Box&quot;:[440.4919,361.1715,68.8012,18.8012]},{&quot;Row&quot;:3,&quot;Column&quot;:4,&quot;Box&quot;:[440.4919,429.1715,132.8012,18.8012]},{&quot;Row&quot;:4,&quot;Column&quot;:0,&quot;Box&quot;:[458.4919,26.9726,203.0,19.8012]},{&quot;Row&quot;:4,&quot;Column&quot;:1,&quot;Box&quot;:[458.4919,229.1715,66.8012,19.8012]},{&quot;Row&quot;:4,&quot;Column&quot;:2,&quot;Box&quot;:[458.4919,295.1715,66.8012,19.8012]},{&quot;Row&quot;:4,&quot;Column&quot;:3,&quot;Box&quot;:[458.4919,361.1715,68.8012,19.8012]},{&quot;Row&quot;:4,&quot;Column&quot;:4,&quot;Box&quot;:[458.4919,429.1715,132.8012,19.8012]},{&quot;Row&quot;:5,&quot;Column&quot;:0,&quot;Box&quot;:[477.4919,26.9726,203.0,19.8012]},{&quot;Row&quot;:5,&quot;Column&quot;:1,&quot;Box&quot;:[477.4919,229.1715,66.8012,19.8012]},{&quot;Row&quot;:5,&quot;Column&quot;:2,&quot;Box&quot;:[477.4919,295.1715,66.8012,19.8012]},{&quot;Row&quot;:5,&quot;Column&quot;:3,&quot;Box&quot;:[477.4919,361.1715,68.8012,19.8012]},{&quot;Row&quot;:5,&quot;Column&quot;:4,&quot;Box&quot;:[477.4919,429.1715,132.8012,19.8012]},{&quot;Row&quot;:6,&quot;Column&quot;:0,&quot;Box&quot;:[496.4919,26.9726,203.0,18.8012]},{&quot;Row&quot;:6,&quot;Column&quot;:1,&quot;Box&quot;:[496.4919,229.1715,66.8012,18.8012]},{&quot;Row&quot;:6,&quot;Column&quot;:2,&quot;Box&quot;:[496.4919,295.1715,66.8012,18.8012]},{&quot;Row&quot;:6,&quot;Column&quot;:3,&quot;Box&quot;:[496.4919,361.1715,68.8012,18.8012]},{&quot;Row&quot;:6,&quot;Column&quot;:4,&quot;Box&quot;:[496.4919,429.1715,132.8012,18.8012]},{&quot;Row&quot;:7,&quot;Column&quot;:0,&quot;Box&quot;:[514.4919,26.9726,203.0,18.8012]},{&quot;Row&quot;:7,&quot;Column&quot;:1,&quot;Box&quot;:[514.4919,229.1715,66.8012,18.8012]},{&quot;Row&quot;:7,&quot;Column&quot;:2,&quot;Box&quot;:[514.4919,295.1715,66.8012,18.8012]},{&quot;Row&quot;:7,&quot;Column&quot;:3,&quot;Box&quot;:[514.4919,361.1715,68.8012,18.8012]},{&quot;Row&quot;:7,&quot;Column&quot;:4,&quot;Box&quot;:[514.4919,429.1715,132.8012,18.8012]},{&quot;Row&quot;:8,&quot;Column&quot;:0,&quot;Box&quot;:[532.4919,26.9726,203.0,19.8012]},{&quot;Row&quot;:8,&quot;Column&quot;:1,&quot;Box&quot;:[532.4919,229.1715,66.8012,19.8012]},{&quot;Row&quot;:8,&quot;Column&quot;:2,&quot;Box&quot;:[532.4919,295.1715,66.8012,19.8012]},{&quot;Row&quot;:8,&quot;Column&quot;:3,&quot;Box&quot;:[532.4919,361.1715,68.8012,19.8012]},{&quot;Row&quot;:8,&quot;Column&quot;:4,&quot;Box&quot;:[532.4919,429.1715,132.8012,19.8012]},{&quot;Row&quot;:9,&quot;Column&quot;:0,&quot;Box&quot;:[551.4919,26.9726,203.0,19.8012]},{&quot;Row&quot;:9,&quot;Column&quot;:1,&quot;Box&quot;:[551.4919,229.1715,66.8012,19.8012]},{&quot;Row&quot;:9,&quot;Column&quot;:2,&quot;Box&quot;:[551.4919,295.1715,66.8012,19.8012]},{&quot;Row&quot;:9,&quot;Column&quot;:3,&quot;Box&quot;:[551.4919,361.1715,68.8012,19.8012]},{&quot;Row&quot;:9,&quot;Column&quot;:4,&quot;Box&quot;:[551.4919,429.1715,132.8012,19.8012]},{&quot;Row&quot;:10,&quot;Column&quot;:0,&quot;Box&quot;:[570.4919,26.9726,203.0,18.8012]},{&quot;Row&quot;:10,&quot;Column&quot;:1,&quot;Box&quot;:[570.4919,229.1715,66.8012,18.8012]},{&quot;Row&quot;:10,&quot;Column&quot;:2,&quot;Box&quot;:[570.4919,295.1715,66.8012,18.8012]},{&quot;Row&quot;:10,&quot;Column&quot;:3,&quot;Box&quot;:[570.4919,361.1715,68.8012,18.8012]},{&quot;Row&quot;:10,&quot;Column&quot;:4,&quot;Box&quot;:[570.4919,429.1715,132.8012,18.8012]},{&quot;Row&quot;:11,&quot;Column&quot;:0,&quot;Box&quot;:[588.4919,26.9726,203.0,18.8012]},{&quot;Row&quot;:11,&quot;Column&quot;:1,&quot;Box&quot;:[588.4919,229.1715,66.8012,18.8012]},{&quot;Row&quot;:11,&quot;Column&quot;:2,&quot;Box&quot;:[588.4919,295.1715,66.8012,18.8012]},{&quot;Row&quot;:11,&quot;Column&quot;:3,&quot;Box&quot;:[588.4919,361.1715,68.8012,18.8012]},{&quot;Row&quot;:11,&quot;Column&quot;:4,&quot;Box&quot;:[588.4919,429.1715,132.8012,18.8012]},{&quot;Row&quot;:12,&quot;Column&quot;:0,&quot;Box&quot;:[606.4919,26.9726,203.0,19.8012]},{&quot;Row&quot;:12,&quot;Column&quot;:1,&quot;Box&quot;:[606.4919,229.1715,66.8012,19.8012]},{&quot;Row&quot;:12,&quot;Column&quot;:2,&quot;Box&quot;:[606.4919,295.1715,66.8012,19.8012]},{&quot;Row&quot;:12,&quot;Column&quot;:3,&quot;Box&quot;:[606.4919,361.1715,68.8012,19.8012]},{&quot;Row&quot;:12,&quot;Column&quot;:4,&quot;Box&quot;:[606.4919,429.1715,132.8012,19.8012]},{&quot;Row&quot;:13,&quot;Column&quot;:0,&quot;Box&quot;:[625.4919,26.9726,203.0,19.8012]},{&quot;Row&quot;:13,&quot;Column&quot;:1,&quot;Box&quot;:[625.4919,229.1715,66.8012,19.8012]},{&quot;Row&quot;:13,&quot;Column&quot;:2,&quot;Box&quot;:[625.4919,295.1715,66.8012,19.8012]},{&quot;Row&quot;:13,&quot;Column&quot;:3,&quot;Box&quot;:[625.4919,361.1715,68.8012,19.8012]},{&quot;Row&quot;:13,&quot;Column&quot;:4,&quot;Box&quot;:[625.4919,429.1715,132.8012,19.8012]},{&quot;Row&quot;:14,&quot;Column&quot;:0,&quot;Box&quot;:[644.4919,26.9726,203.0,4.4533]},{&quot;Row&quot;:14,&quot;Column&quot;:1,&quot;Box&quot;:[644.4919,229.1715,66.8012,4.4533]},{&quot;Row&quot;:14,&quot;Column&quot;:2,&quot;Box&quot;:[644.4919,295.1715,66.8012,4.4533]},{&quot;Row&quot;:14,&quot;Column&quot;:3,&quot;Box&quot;:[644.4919,361.1715,68.8012,4.4533]},{&quot;Row&quot;:14,&quot;Column&quot;:4,&quot;Box&quot;:[644.4919,429.1715,132.8012,4.4533]}]}]}]}]">
+                <p6:FormExtractor.DocumentBounds>
+                  <InArgument x:TypeArguments="p5:ResultsDocumentBounds">
+                    <DelegateArgumentValue x:TypeArguments="p5:ResultsDocumentBounds">
+                      <DelegateInArgument x:TypeArguments="p5:ResultsDocumentBounds" Name="DocumentBounds" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p6:FormExtractor.DocumentBounds>
+                <p6:FormExtractor.DocumentObjectModel>
+                  <InArgument x:TypeArguments="p3:Document">
+                    <DelegateArgumentValue x:TypeArguments="p3:Document">
+                      <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p6:FormExtractor.DocumentObjectModel>
+                <p6:FormExtractor.DocumentPath>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p6:FormExtractor.DocumentPath>
+                <p6:FormExtractor.DocumentText>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p6:FormExtractor.DocumentText>
+                <p6:FormExtractor.ExtractorDocumentType>
+                  <InArgument x:TypeArguments="p7:ExtractorDocumentType">
+                    <DelegateArgumentValue x:TypeArguments="p7:ExtractorDocumentType">
+                      <DelegateInArgument x:TypeArguments="p7:ExtractorDocumentType" Name="ExtractorDocumentType" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p6:FormExtractor.ExtractorDocumentType>
+                <p6:FormExtractor.ExtractorResult>
+                  <OutArgument x:TypeArguments="p7:ExtractorResult">
+                    <DelegateArgumentReference x:TypeArguments="p7:ExtractorResult">
+                      <DelegateOutArgument x:TypeArguments="p7:ExtractorResult" Name="ExtractorResult" />
+                    </DelegateArgumentReference>
+                  </OutArgument>
+                </p6:FormExtractor.ExtractorResult>
+              </p6:FormExtractor>
+              <p6:RegexBasedExtractor Configuration="[&quot;[{&quot;&quot;DocumentTypeId&quot;&quot;:&quot;&quot;マーケティング.アンケート.イベント&quot;&quot;,&quot;&quot;FieldConfiguration&quot;&quot;:[{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;マーケティング.アンケート.イベント.メールアドレス&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;((?&gt;[a-zA-Z\\d!#$%&amp;'*+\\-\\/=?^_`{|}~]+\\x20*|\&quot;&quot;((?=[\\x01-\\x7f])[^\&quot;&quot;\\\\]|\\\\[\\x01-\\x7f])*\&quot;&quot;\\x20*)*(?&lt;angle&gt;&lt;))?((?!\\.)(?&gt;\\.?[a-zA-Z\\d!#$%&amp;'*+\\-\\/=?^_`{|}~]+)+|\&quot;&quot;((?=[\\x01-\\x7f])[^\&quot;&quot;\\\\]|\\\\[\\x01-\\x7f])*\&quot;&quot;)@(((?!-)[a-zA-Z\\d\\-]+(?&lt;!-)\\.)+[a-zA-Z]{2,}|\\[(((?(?&lt;!\\[)\\.)(25[0-5]|2[0-4]\\d|[01]?\\d?\\d)){4}|[a-zA-Z\\d\\-]*[a-zA-Z\\d]:((?=[\\x01-\\x7f])[^\\\\\\[\\]]|\\\\[\\x01-\\x7f])+)\\])(?(angle)&gt;)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;EMAIL\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;メール アドレス\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;((?&gt;[a-zA-Z\\\\d!#$%&amp;'*+\\\\-\\\\\\/=?^_`{|}~]+\\\\x20*|\\\&quot;&quot;((?=[\\\\x01-\\\\x7f])[^\\\&quot;&quot;\\\\\\\\]|\\\\\\\\[\\\\x01-\\\\x7f])*\\\&quot;&quot;\\\\x20*)*(?&lt;angle&gt;&lt;))?((?!\\\\.)(?&gt;\\\\.?[a-zA-Z\\\\d!#$%&amp;'*+\\\\-\\\\\\/=?^_`{|}~]+)+|\\\&quot;&quot;((?=[\\\\x01-\\\\x7f])[^\\\&quot;&quot;\\\\\\\\]|\\\\\\\\[\\\\x01-\\\\x7f])*\\\&quot;&quot;)@(((?!-)[a-zA-Z\\\\d\\\\-]+(?&lt;!-)\\\\.)+[a-zA-Z]{2,}|\\\\[(((?(?&lt;!\\\\[)\\\\.)(25[0-5]|2[0-4]\\\\d|[01]?\\\\d?\\\\d)){4}|[a-zA-Z\\\\d\\\\-]*[a-zA-Z\\\\d]:((?=[\\\\x01-\\\\x7f])[^\\\\\\\\\\\\[\\\\]]|\\\\\\\\[\\\\x01-\\\\x7f])+)\\\\])(?(angle)&gt;)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;指定回数\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;}]}]&quot;]" DisplayName="正規表現ベースの抽出子" sap:VirtualizedContainerService.HintSize="234,195" sap2010:WorkflowViewState.IdRef="RegexBasedExtractor_7" PersistenceId="UId9ceaac864f247a8b2891138458190ee" Timeout="2000" UseVisualAlignment="False">
+                <p6:RegexBasedExtractor.DocumentBounds>
+                  <InArgument x:TypeArguments="p5:ResultsDocumentBounds">
+                    <DelegateArgumentValue x:TypeArguments="p5:ResultsDocumentBounds">
+                      <DelegateInArgument x:TypeArguments="p5:ResultsDocumentBounds" Name="DocumentBounds" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p6:RegexBasedExtractor.DocumentBounds>
+                <p6:RegexBasedExtractor.DocumentObjectModel>
+                  <InArgument x:TypeArguments="p3:Document">
+                    <DelegateArgumentValue x:TypeArguments="p3:Document">
+                      <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p6:RegexBasedExtractor.DocumentObjectModel>
+                <p6:RegexBasedExtractor.DocumentPath>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p6:RegexBasedExtractor.DocumentPath>
+                <p6:RegexBasedExtractor.DocumentText>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p6:RegexBasedExtractor.DocumentText>
+                <p6:RegexBasedExtractor.ExtractorDocumentType>
+                  <InArgument x:TypeArguments="p7:ExtractorDocumentType">
+                    <DelegateArgumentValue x:TypeArguments="p7:ExtractorDocumentType">
+                      <DelegateInArgument x:TypeArguments="p7:ExtractorDocumentType" Name="ExtractorDocumentType" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p6:RegexBasedExtractor.ExtractorDocumentType>
+                <p6:RegexBasedExtractor.ExtractorResult>
+                  <OutArgument x:TypeArguments="p7:ExtractorResult">
+                    <DelegateArgumentReference x:TypeArguments="p7:ExtractorResult">
+                      <DelegateOutArgument x:TypeArguments="p7:ExtractorResult" Name="ExtractorResult" />
+                    </DelegateArgumentReference>
+                  </OutArgument>
+                </p6:RegexBasedExtractor.ExtractorResult>
+              </p6:RegexBasedExtractor>
+              <p6:IntelligentFormExtractor SerializedSignatureFields="{x:Null}" ApiKey="[keyAPI]" DisplayName="インテリジェント フォーム抽出子" Endpoint="https://intelligentforms.uipath.com/" sap:VirtualizedContainerService.HintSize="234,195" sap2010:WorkflowViewState.IdRef="IntelligentFormExtractor_7" MinOverlapPercentage="65" PersistenceId="UI0861bc96a4904806a5dd7036e95eee3e" SerializedSettings="{}{&quot;DocTypeSettings&quot;:[{&quot;DocumentTypeId&quot;:&quot;マーケティング.アンケート.イベント&quot;,&quot;SignatureFields&quot;:[],&quot;HandwritingFields&quot;:[{&quot;FieldId&quot;:&quot;マーケティング.アンケート.イベント.氏名&quot;},{&quot;FieldId&quot;:&quot;マーケティング.アンケート.イベント.メールアドレス&quot;},{&quot;FieldId&quot;:&quot;マーケティング.アンケート.イベント.電話番号&quot;},{&quot;FieldId&quot;:&quot;マーケティング.アンケート.イベント.イベントの満足度&quot;},{&quot;FieldId&quot;:&quot;マーケティング.アンケート.イベント.コメント&quot;}],&quot;BooleanSynonymsForYes&quot;:[&quot;Yes&quot;,&quot;X&quot;,&quot;V&quot;,&quot;✓&quot;,&quot;✔&quot;],&quot;BooleanSynonymsForNo&quot;:[&quot;No&quot;]},{&quot;DocumentTypeId&quot;:&quot;ファイナンス.領収書.交通費&quot;,&quot;SignatureFields&quot;:[],&quot;HandwritingFields&quot;:[{&quot;FieldId&quot;:&quot;ファイナンス.領収書.交通費.金額&quot;},{&quot;FieldId&quot;:&quot;ファイナンス.領収書.交通費.出発&quot;},{&quot;FieldId&quot;:&quot;ファイナンス.領収書.交通費.到着&quot;}],&quot;BooleanSynonymsForYes&quot;:[],&quot;BooleanSynonymsForNo&quot;:[]},{&quot;DocumentTypeId&quot;:&quot;ファイナンス.領収書.飛行機&quot;,&quot;SignatureFields&quot;:[],&quot;HandwritingFields&quot;:[],&quot;BooleanSynonymsForYes&quot;:[],&quot;BooleanSynonymsForNo&quot;:[]},{&quot;DocumentTypeId&quot;:&quot;ファイナンス.領収書.交際費&quot;,&quot;SignatureFields&quot;:[],&quot;HandwritingFields&quot;:[{&quot;FieldId&quot;:&quot;ファイナンス.領収書.交際費.金額&quot;}],&quot;BooleanSynonymsForYes&quot;:[],&quot;BooleanSynonymsForNo&quot;:[]},{&quot;DocumentTypeId&quot;:&quot;ファイナンス.請求書.請求書A&quot;,&quot;SignatureFields&quot;:[],&quot;HandwritingFields&quot;:[],&quot;BooleanSynonymsForYes&quot;:[],&quot;BooleanSynonymsForNo&quot;:[]},{&quot;DocumentTypeId&quot;:&quot;ファイナンス.見積書.見積書&quot;,&quot;SignatureFields&quot;:[],&quot;HandwritingFields&quot;:[{&quot;FieldId&quot;:&quot;ファイナンス.見積書.見積書.備考&quot;}],&quot;BooleanSynonymsForYes&quot;:[],&quot;BooleanSynonymsForNo&quot;:[]}]}" SerializedTemplates="[{&quot;DocumentTypeId&quot;:&quot;ファイナンス.領収書.交通費&quot;,&quot;FormId&quot;:&quot;e6456eb5&quot;,&quot;FormName&quot;:&quot;テンプレート_新幹線&quot;,&quot;OriginalFileExtension&quot;:&quot;jpg&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,1020.0,690.0],&quot;SkewAngle&quot;:0.1807,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;【時訓&quot;,&quot;Box&quot;:[87.9149,91.8928,86.2175,35.205]},{&quot;Text&quot;:&quot;新幹線特定特急券&quot;,&quot;Box&quot;:[76.9149,337.8612,245.2869,48.1703]},{&quot;Text&quot;:&quot;→&quot;,&quot;Box&quot;:[213.8802,483.8959,38.2082,33.2397]},{&quot;Text&quot;:&quot;9日当日限リ有効&quot;,&quot;Box&quot;:[320.9149,211.8675,242.2429,42.1703]},{&quot;Text&quot;:&quot;指定席への変更は指定席特急料金との差領が必要&quot;,&quot;Box&quot;:[371.9305,88.8928,678.2144,39.1389]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;ファイナンス.領収書.交通費.金額&quot;,&quot;Box&quot;:[313.1418,48.5278,318.6355,199.605]},{&quot;Field&quot;:&quot;ファイナンス.領収書.交通費.出発&quot;,&quot;Box&quot;:[159.3178,50.3591,430.3411,145.5835]},{&quot;Field&quot;:&quot;ファイナンス.領収書.交通費.到着&quot;,&quot;Box&quot;:[159.3178,550.2873,414.7756,148.3303]}],&quot;Tables&quot;:[]}]},{&quot;DocumentTypeId&quot;:&quot;マーケティング.アンケート.イベント&quot;,&quot;FormId&quot;:&quot;71f71199&quot;,&quot;FormName&quot;:&quot;アンケートイベントA&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,595.0,841.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;&lt;氏名&gt;&quot;,&quot;Box&quot;:[192.2869,134.18,39.8439,11.04]},{&quot;Text&quot;:&quot;&lt;メールアドレス&gt;&quot;,&quot;Box&quot;:[270.5569,134.18,95.0631,11.04]},{&quot;Text&quot;:&quot;&lt;電話番号&gt;&quot;,&quot;Box&quot;:[329.5969,134.18,61.9124,11.04]},{&quot;Text&quot;:&quot;&lt;イベントの満足度&gt;&quot;,&quot;Box&quot;:[388.6369,134.18,106.1069,11.04]},{&quot;Text&quot;:&quot;＜コメント＞&quot;,&quot;Box&quot;:[505.2969,134.18,66.24,11.04]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;マーケティング.アンケート.イベント.氏名&quot;,&quot;Box&quot;:[210.974,133.5278,325.8079,34.1831]},{&quot;Field&quot;:&quot;マーケティング.アンケート.イベント.メールアドレス&quot;,&quot;Box&quot;:[288.9542,133.5278,325.8079,14.9551]},{&quot;Field&quot;:&quot;マーケティング.アンケート.イベント.電話番号&quot;,&quot;Box&quot;:[348.2406,133.5278,326.342,15.4892]},{&quot;Field&quot;:&quot;マーケティング.アンケート.イベント.イベントの満足度&quot;,&quot;Box&quot;:[406.9928,409.1293,50.7406,34.7172]},{&quot;Field&quot;:&quot;マーケティング.アンケート.イベント.ニュースレターを購読する&quot;,&quot;Box&quot;:[468.4156,136.1984,5.8752,6.9434]},{&quot;Field&quot;:&quot;マーケティング.アンケート.イベント.コメント&quot;,&quot;Box&quot;:[523.9632,134.0619,325.2738,91.8671]}],&quot;Tables&quot;:[]}]},{&quot;DocumentTypeId&quot;:&quot;ファイナンス.見積書.見積書&quot;,&quot;FormId&quot;:&quot;3a1e79ce&quot;,&quot;FormName&quot;:&quot;見積書&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,595.0,841.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;内容&quot;,&quot;Box&quot;:[372.7909,123.02,16.08,8.04]},{&quot;Text&quot;:&quot;見積書&quot;,&quot;Box&quot;:[81.1671,273.65,47.88,15.96]},{&quot;Text&quot;:&quot;発行日&quot;,&quot;Box&quot;:[133.2409,365.59,24.12,8.04]},{&quot;Text&quot;:&quot;見積番号&quot;,&quot;Box&quot;:[151.7209,365.59,32.16,8.04]},{&quot;Text&quot;:&quot;お見積の有効期限&quot;,&quot;Box&quot;:[318.0709,398.71,64.32,8.04]},{&quot;Text&quot;:&quot;数量&quot;,&quot;Box&quot;:[373.2709,256.25,16.08,8.04]},{&quot;Text&quot;:&quot;消費税&quot;,&quot;Box&quot;:[373.2709,385.51,24.12,8.04]},{&quot;Text&quot;:&quot;備考&quot;,&quot;Box&quot;:[735.3569,32.52,16.08,8.04]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.発行日&quot;,&quot;Box&quot;:[129.2549,457.1993,80.6508,13.8869]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.見積番号&quot;,&quot;Box&quot;:[149.0171,456.6652,80.6508,12.8187]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.郵便番号&quot;,&quot;Box&quot;:[131.9255,40.0583,89.1966,11.2163]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.取引先会社住所&quot;,&quot;Box&quot;:[151.1535,33.1149,260.6463,16.5575]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.会社名&quot;,&quot;Box&quot;:[179.4614,33.649,258.5099,24.5691]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.お見積の有効期限&quot;,&quot;Box&quot;:[332.2172,364.798,129.2549,14.9551]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.お見積金額（税込）&quot;,&quot;Box&quot;:[314.0575,32.0467,196.0189,33.649]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.小計&quot;,&quot;Box&quot;:[658.5592,431.5619,129.2549,14.421]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.消費税&quot;,&quot;Box&quot;:[677.2531,431.5619,129.789,14.421]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.合計&quot;,&quot;Box&quot;:[695.4129,431.5619,129.789,14.9551]},{&quot;Field&quot;:&quot;ファイナンス.見積書.見積書.備考&quot;,&quot;Box&quot;:[750.4264,32.0467,528.7702,33.1149]}],&quot;Tables&quot;:[{&quot;FieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル&quot;,&quot;Headers&quot;:[{&quot;FieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.内容&quot;,&quot;Box&quot;:[381.6225,24.8362,205.0,5.0]},{&quot;FieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.数量&quot;,&quot;Box&quot;:[381.6225,229.035,66.8012,5.0]},{&quot;FieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.単価（税抜）&quot;,&quot;Box&quot;:[381.6225,295.035,66.8012,5.0]},{&quot;FieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.消費税&quot;,&quot;Box&quot;:[381.6225,361.035,68.8012,5.0]},{&quot;FieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.小計（税抜）&quot;,&quot;Box&quot;:[381.6225,429.035,132.8012,5.0]}],&quot;Cells&quot;:[{&quot;Row&quot;:0,&quot;Column&quot;:0,&quot;Box&quot;:[385.8214,24.8362,205.0,18.8012]},{&quot;Row&quot;:0,&quot;Column&quot;:1,&quot;Box&quot;:[385.8214,229.035,66.8012,18.8012]},{&quot;Row&quot;:0,&quot;Column&quot;:2,&quot;Box&quot;:[385.8214,295.035,66.8012,18.8012]},{&quot;Row&quot;:0,&quot;Column&quot;:3,&quot;Box&quot;:[385.8214,361.035,68.8012,18.8012]},{&quot;Row&quot;:0,&quot;Column&quot;:4,&quot;Box&quot;:[385.8214,429.035,132.8012,18.8012]},{&quot;Row&quot;:1,&quot;Column&quot;:0,&quot;Box&quot;:[403.8214,24.8362,205.0,18.8012]},{&quot;Row&quot;:1,&quot;Column&quot;:1,&quot;Box&quot;:[403.8214,229.035,66.8012,18.8012]},{&quot;Row&quot;:1,&quot;Column&quot;:2,&quot;Box&quot;:[403.8214,295.035,66.8012,18.8012]},{&quot;Row&quot;:1,&quot;Column&quot;:3,&quot;Box&quot;:[403.8214,361.035,68.8012,18.8012]},{&quot;Row&quot;:1,&quot;Column&quot;:4,&quot;Box&quot;:[403.8214,429.035,132.8012,18.8012]},{&quot;Row&quot;:2,&quot;Column&quot;:0,&quot;Box&quot;:[421.8214,24.8362,205.0,19.8012]},{&quot;Row&quot;:2,&quot;Column&quot;:1,&quot;Box&quot;:[421.8214,229.035,66.8012,19.8012]},{&quot;Row&quot;:2,&quot;Column&quot;:2,&quot;Box&quot;:[421.8214,295.035,66.8012,19.8012]},{&quot;Row&quot;:2,&quot;Column&quot;:3,&quot;Box&quot;:[421.8214,361.035,68.8012,19.8012]},{&quot;Row&quot;:2,&quot;Column&quot;:4,&quot;Box&quot;:[421.8214,429.035,132.8012,19.8012]},{&quot;Row&quot;:3,&quot;Column&quot;:0,&quot;Box&quot;:[440.8214,24.8362,205.0,19.8012]},{&quot;Row&quot;:3,&quot;Column&quot;:1,&quot;Box&quot;:[440.8214,229.035,66.8012,19.8012]},{&quot;Row&quot;:3,&quot;Column&quot;:2,&quot;Box&quot;:[440.8214,295.035,66.8012,19.8012]},{&quot;Row&quot;:3,&quot;Column&quot;:3,&quot;Box&quot;:[440.8214,361.035,68.8012,19.8012]},{&quot;Row&quot;:3,&quot;Column&quot;:4,&quot;Box&quot;:[440.8214,429.035,132.8012,19.8012]},{&quot;Row&quot;:4,&quot;Column&quot;:0,&quot;Box&quot;:[459.8214,24.8362,205.0,18.8012]},{&quot;Row&quot;:4,&quot;Column&quot;:1,&quot;Box&quot;:[459.8214,229.035,66.8012,18.8012]},{&quot;Row&quot;:4,&quot;Column&quot;:2,&quot;Box&quot;:[459.8214,295.035,66.8012,18.8012]},{&quot;Row&quot;:4,&quot;Column&quot;:3,&quot;Box&quot;:[459.8214,361.035,68.8012,18.8012]},{&quot;Row&quot;:4,&quot;Column&quot;:4,&quot;Box&quot;:[459.8214,429.035,132.8012,18.8012]},{&quot;Row&quot;:5,&quot;Column&quot;:0,&quot;Box&quot;:[477.8214,24.8362,205.0,18.8012]},{&quot;Row&quot;:5,&quot;Column&quot;:1,&quot;Box&quot;:[477.8214,229.035,66.8012,18.8012]},{&quot;Row&quot;:5,&quot;Column&quot;:2,&quot;Box&quot;:[477.8214,295.035,66.8012,18.8012]},{&quot;Row&quot;:5,&quot;Column&quot;:3,&quot;Box&quot;:[477.8214,361.035,68.8012,18.8012]},{&quot;Row&quot;:5,&quot;Column&quot;:4,&quot;Box&quot;:[477.8214,429.035,132.8012,18.8012]},{&quot;Row&quot;:6,&quot;Column&quot;:0,&quot;Box&quot;:[495.8214,24.8362,205.0,19.8012]},{&quot;Row&quot;:6,&quot;Column&quot;:1,&quot;Box&quot;:[495.8214,229.035,66.8012,19.8012]},{&quot;Row&quot;:6,&quot;Column&quot;:2,&quot;Box&quot;:[495.8214,295.035,66.8012,19.8012]},{&quot;Row&quot;:6,&quot;Column&quot;:3,&quot;Box&quot;:[495.8214,361.035,68.8012,19.8012]},{&quot;Row&quot;:6,&quot;Column&quot;:4,&quot;Box&quot;:[495.8214,429.035,132.8012,19.8012]},{&quot;Row&quot;:7,&quot;Column&quot;:0,&quot;Box&quot;:[514.8214,24.8362,205.0,19.8012]},{&quot;Row&quot;:7,&quot;Column&quot;:1,&quot;Box&quot;:[514.8214,229.035,66.8012,19.8012]},{&quot;Row&quot;:7,&quot;Column&quot;:2,&quot;Box&quot;:[514.8214,295.035,66.8012,19.8012]},{&quot;Row&quot;:7,&quot;Column&quot;:3,&quot;Box&quot;:[514.8214,361.035,68.8012,19.8012]},{&quot;Row&quot;:7,&quot;Column&quot;:4,&quot;Box&quot;:[514.8214,429.035,132.8012,19.8012]},{&quot;Row&quot;:8,&quot;Column&quot;:0,&quot;Box&quot;:[533.8214,24.8362,205.0,18.8012]},{&quot;Row&quot;:8,&quot;Column&quot;:1,&quot;Box&quot;:[533.8214,229.035,66.8012,18.8012]},{&quot;Row&quot;:8,&quot;Column&quot;:2,&quot;Box&quot;:[533.8214,295.035,66.8012,18.8012]},{&quot;Row&quot;:8,&quot;Column&quot;:3,&quot;Box&quot;:[533.8214,361.035,68.8012,18.8012]},{&quot;Row&quot;:8,&quot;Column&quot;:4,&quot;Box&quot;:[533.8214,429.035,132.8012,18.8012]},{&quot;Row&quot;:9,&quot;Column&quot;:0,&quot;Box&quot;:[551.8214,24.8362,205.0,18.8012]},{&quot;Row&quot;:9,&quot;Column&quot;:1,&quot;Box&quot;:[551.8214,229.035,66.8012,18.8012]},{&quot;Row&quot;:9,&quot;Column&quot;:2,&quot;Box&quot;:[551.8214,295.035,66.8012,18.8012]},{&quot;Row&quot;:9,&quot;Column&quot;:3,&quot;Box&quot;:[551.8214,361.035,68.8012,18.8012]},{&quot;Row&quot;:9,&quot;Column&quot;:4,&quot;Box&quot;:[551.8214,429.035,132.8012,18.8012]},{&quot;Row&quot;:10,&quot;Column&quot;:0,&quot;Box&quot;:[569.8214,24.8362,205.0,19.8012]},{&quot;Row&quot;:10,&quot;Column&quot;:1,&quot;Box&quot;:[569.8214,229.035,66.8012,19.8012]},{&quot;Row&quot;:10,&quot;Column&quot;:2,&quot;Box&quot;:[569.8214,295.035,66.8012,19.8012]},{&quot;Row&quot;:10,&quot;Column&quot;:3,&quot;Box&quot;:[569.8214,361.035,68.8012,19.8012]},{&quot;Row&quot;:10,&quot;Column&quot;:4,&quot;Box&quot;:[569.8214,429.035,132.8012,19.8012]},{&quot;Row&quot;:11,&quot;Column&quot;:0,&quot;Box&quot;:[588.8214,24.8362,205.0,19.8012]},{&quot;Row&quot;:11,&quot;Column&quot;:1,&quot;Box&quot;:[588.8214,229.035,66.8012,19.8012]},{&quot;Row&quot;:11,&quot;Column&quot;:2,&quot;Box&quot;:[588.8214,295.035,66.8012,19.8012]},{&quot;Row&quot;:11,&quot;Column&quot;:3,&quot;Box&quot;:[588.8214,361.035,68.8012,19.8012]},{&quot;Row&quot;:11,&quot;Column&quot;:4,&quot;Box&quot;:[588.8214,429.035,132.8012,19.8012]},{&quot;Row&quot;:12,&quot;Column&quot;:0,&quot;Box&quot;:[607.8214,24.8362,205.0,18.8012]},{&quot;Row&quot;:12,&quot;Column&quot;:1,&quot;Box&quot;:[607.8214,229.035,66.8012,18.8012]},{&quot;Row&quot;:12,&quot;Column&quot;:2,&quot;Box&quot;:[607.8214,295.035,66.8012,18.8012]},{&quot;Row&quot;:12,&quot;Column&quot;:3,&quot;Box&quot;:[607.8214,361.035,68.8012,18.8012]},{&quot;Row&quot;:12,&quot;Column&quot;:4,&quot;Box&quot;:[607.8214,429.035,132.8012,18.8012]},{&quot;Row&quot;:13,&quot;Column&quot;:0,&quot;Box&quot;:[625.8214,24.8362,205.0,18.8012]},{&quot;Row&quot;:13,&quot;Column&quot;:1,&quot;Box&quot;:[625.8214,229.035,66.8012,18.8012]},{&quot;Row&quot;:13,&quot;Column&quot;:2,&quot;Box&quot;:[625.8214,295.035,66.8012,18.8012]},{&quot;Row&quot;:13,&quot;Column&quot;:3,&quot;Box&quot;:[625.8214,361.035,68.8012,18.8012]},{&quot;Row&quot;:13,&quot;Column&quot;:4,&quot;Box&quot;:[625.8214,429.035,132.8012,18.8012]},{&quot;Row&quot;:14,&quot;Column&quot;:0,&quot;Box&quot;:[643.8214,24.8362,205.0,5.658]},{&quot;Row&quot;:14,&quot;Column&quot;:1,&quot;Box&quot;:[643.8214,229.035,66.8012,5.658]},{&quot;Row&quot;:14,&quot;Column&quot;:2,&quot;Box&quot;:[643.8214,295.035,66.8012,5.658]},{&quot;Row&quot;:14,&quot;Column&quot;:3,&quot;Box&quot;:[643.8214,361.035,68.8012,5.658]},{&quot;Row&quot;:14,&quot;Column&quot;:4,&quot;Box&quot;:[643.8214,429.035,132.8012,5.658]}]}]}]}]">
+                <p6:IntelligentFormExtractor.DocumentBounds>
+                  <InArgument x:TypeArguments="p5:ResultsDocumentBounds">
+                    <DelegateArgumentValue x:TypeArguments="p5:ResultsDocumentBounds">
+                      <DelegateInArgument x:TypeArguments="p5:ResultsDocumentBounds" Name="DocumentBounds" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p6:IntelligentFormExtractor.DocumentBounds>
+                <p6:IntelligentFormExtractor.DocumentObjectModel>
+                  <InArgument x:TypeArguments="p3:Document">
+                    <DelegateArgumentValue x:TypeArguments="p3:Document">
+                      <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p6:IntelligentFormExtractor.DocumentObjectModel>
+                <p6:IntelligentFormExtractor.DocumentPath>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p6:IntelligentFormExtractor.DocumentPath>
+                <p6:IntelligentFormExtractor.DocumentText>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p6:IntelligentFormExtractor.DocumentText>
+                <p6:IntelligentFormExtractor.ExtractorDocumentType>
+                  <InArgument x:TypeArguments="p7:ExtractorDocumentType">
+                    <DelegateArgumentValue x:TypeArguments="p7:ExtractorDocumentType">
+                      <DelegateInArgument x:TypeArguments="p7:ExtractorDocumentType" Name="ExtractorDocumentType" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p6:IntelligentFormExtractor.ExtractorDocumentType>
+                <p6:IntelligentFormExtractor.ExtractorResult>
+                  <OutArgument x:TypeArguments="p7:ExtractorResult">
+                    <DelegateArgumentReference x:TypeArguments="p7:ExtractorResult">
+                      <DelegateOutArgument x:TypeArguments="p7:ExtractorResult" Name="ExtractorResult" />
+                    </DelegateArgumentReference>
+                  </OutArgument>
+                </p6:IntelligentFormExtractor.ExtractorResult>
+              </p6:IntelligentFormExtractor>
+              <p8:MachineLearningExtractor Configuration="{x:Null}" SelectedMLSkill="{x:Null}" ApiKey="[keyAPI]" DisplayName="マシン ラーニング抽出子（領収書）" Endpoint="https://receipts.uipath.com" sap:VirtualizedContainerService.HintSize="234,195" sap2010:WorkflowViewState.IdRef="MachineLearningExtractor_13" PersistenceId="UI502ce408e2ee41a8be42f5e5850c700f" RetryOnFailure="True" Timeout="100000" UseServerSideOCR="False">
+                <p8:MachineLearningExtractor.AvailableMLSkills>
+                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                </p8:MachineLearningExtractor.AvailableMLSkills>
+                <p8:MachineLearningExtractor.DocumentBounds>
+                  <InArgument x:TypeArguments="p5:ResultsDocumentBounds">
+                    <DelegateArgumentValue x:TypeArguments="p5:ResultsDocumentBounds">
+                      <DelegateInArgument x:TypeArguments="p5:ResultsDocumentBounds" Name="DocumentBounds" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p8:MachineLearningExtractor.DocumentBounds>
+                <p8:MachineLearningExtractor.DocumentObjectModel>
+                  <InArgument x:TypeArguments="p3:Document">
+                    <DelegateArgumentValue x:TypeArguments="p3:Document">
+                      <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p8:MachineLearningExtractor.DocumentObjectModel>
+                <p8:MachineLearningExtractor.DocumentPath>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p8:MachineLearningExtractor.DocumentPath>
+                <p8:MachineLearningExtractor.DocumentText>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p8:MachineLearningExtractor.DocumentText>
+                <p8:MachineLearningExtractor.ExtractorDocumentType>
+                  <InArgument x:TypeArguments="p7:ExtractorDocumentType">
+                    <DelegateArgumentValue x:TypeArguments="p7:ExtractorDocumentType">
+                      <DelegateInArgument x:TypeArguments="p7:ExtractorDocumentType" Name="ExtractorDocumentType" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p8:MachineLearningExtractor.ExtractorDocumentType>
+                <p8:MachineLearningExtractor.ExtractorResult>
+                  <OutArgument x:TypeArguments="p7:ExtractorResult">
+                    <DelegateArgumentReference x:TypeArguments="p7:ExtractorResult">
+                      <DelegateOutArgument x:TypeArguments="p7:ExtractorResult" Name="ExtractorResult" />
+                    </DelegateArgumentReference>
+                  </OutArgument>
+                </p8:MachineLearningExtractor.ExtractorResult>
+              </p8:MachineLearningExtractor>
+              <p8:MachineLearningExtractor Configuration="{x:Null}" SelectedMLSkill="{x:Null}" ApiKey="[keyAPI]" DisplayName="マシン ラーニング抽出子（請求書）" Endpoint="https://invoices.uipath.com" sap:VirtualizedContainerService.HintSize="234,195" sap2010:WorkflowViewState.IdRef="MachineLearningExtractor_14" PersistenceId="UIc4a3e20d77b24409b09fc851f5d2030b" RetryOnFailure="True" Timeout="100000" UseServerSideOCR="False">
+                <p8:MachineLearningExtractor.AvailableMLSkills>
+                  <scg:List x:TypeArguments="x:String" Capacity="0" />
+                </p8:MachineLearningExtractor.AvailableMLSkills>
+                <p8:MachineLearningExtractor.DocumentBounds>
+                  <InArgument x:TypeArguments="p5:ResultsDocumentBounds">
+                    <DelegateArgumentValue x:TypeArguments="p5:ResultsDocumentBounds">
+                      <DelegateInArgument x:TypeArguments="p5:ResultsDocumentBounds" Name="DocumentBounds" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p8:MachineLearningExtractor.DocumentBounds>
+                <p8:MachineLearningExtractor.DocumentObjectModel>
+                  <InArgument x:TypeArguments="p3:Document">
+                    <DelegateArgumentValue x:TypeArguments="p3:Document">
+                      <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p8:MachineLearningExtractor.DocumentObjectModel>
+                <p8:MachineLearningExtractor.DocumentPath>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p8:MachineLearningExtractor.DocumentPath>
+                <p8:MachineLearningExtractor.DocumentText>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p8:MachineLearningExtractor.DocumentText>
+                <p8:MachineLearningExtractor.ExtractorDocumentType>
+                  <InArgument x:TypeArguments="p7:ExtractorDocumentType">
+                    <DelegateArgumentValue x:TypeArguments="p7:ExtractorDocumentType">
+                      <DelegateInArgument x:TypeArguments="p7:ExtractorDocumentType" Name="ExtractorDocumentType" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p8:MachineLearningExtractor.ExtractorDocumentType>
+                <p8:MachineLearningExtractor.ExtractorResult>
+                  <OutArgument x:TypeArguments="p7:ExtractorResult">
+                    <DelegateArgumentReference x:TypeArguments="p7:ExtractorResult">
+                      <DelegateOutArgument x:TypeArguments="p7:ExtractorResult" Name="ExtractorResult" />
+                    </DelegateArgumentReference>
+                  </OutArgument>
+                </p8:MachineLearningExtractor.ExtractorResult>
+              </p8:MachineLearningExtractor>
+            </p6:DataExtractionScope.Extractors>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </p6:DataExtractionScope>
+          <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="1432,93" sap2010:WorkflowViewState.IdRef="LogMessage_91" Level="Info" Message="[&quot;End：Extract Data&quot;]" />
+          <Sequence DisplayName="ドキュメント検証" sap:VirtualizedContainerService.HintSize="1432,2454" sap2010:WorkflowViewState.IdRef="Sequence_81">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="520,93" sap2010:WorkflowViewState.IdRef="LogMessage_92" Level="Info" Message="[&quot;Start：Extract Validation&quot;]" />
+            <ui:CommentOut DisplayName="コメント アウト" sap:VirtualizedContainerService.HintSize="520,52" sap2010:WorkflowViewState.IdRef="CommentOut_30">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="無視されたアクティビティ" sap:VirtualizedContainerService.HintSize="418,557" sap2010:WorkflowViewState.IdRef="Sequence_78">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="プロセス実行端末上でドキュメント検証" sap:VirtualizedContainerService.HintSize="376,465" sap2010:WorkflowViewState.IdRef="Sequence_77">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <p:PresentValidationStation AutomaticExtractionResults="[docExtractResult]" DisplayName="検証ステーションを提示" DocumentObjectModel="[docObjectModel]" DocumentPath="[pathInputFile]" DocumentText="[docText]" sap:VirtualizedContainerService.HintSize="334,373" sap2010:WorkflowViewState.IdRef="PresentValidationStation_7" Taxonomy="[docTaxonomy]" ValidatedExtractionResults="[docExtractResult]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </p:PresentValidationStation>
+                  </Sequence>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <Sequence DisplayName="Action Centerでドキュメント検証" sap:VirtualizedContainerService.HintSize="520,2004" sap2010:WorkflowViewState.IdRef="Sequence_80">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="uiaam:DocumentValidationActionData" Name="docValidationActionObj" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <p:CreateDocumentValidationAction ActionCatalog="{x:Null}" FolderPath="{x:Null}" TimeoutMs="{x:Null}" ActionOutput="[docValidationActionObj]" ActionPriority="Medium" ActionTitle="ドキュメントの検証依頼" AutomaticExtractionResults="[docExtractResult]" BucketName="[bucketName]" DisplayName="ドキュメント検証アクションを作成" DocumentObjectModel="[docObjectModel]" DocumentPath="[pathInputFile]" DocumentText="[docText]" sap:VirtualizedContainerService.HintSize="478,373" sap2010:WorkflowViewState.IdRef="CreateDocumentValidationAction_4" Taxonomy="[docTaxonomy]">
+                <p:CreateDocumentValidationAction.BucketFolderPath>
+                  <InArgument x:TypeArguments="x:String">
+                    <Literal x:TypeArguments="x:String" Value="" />
+                  </InArgument>
+                </p:CreateDocumentValidationAction.BucketFolderPath>
+              </p:CreateDocumentValidationAction>
+              <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="478,93" sap2010:WorkflowViewState.IdRef="LogMessage_93" Level="Info" Message="[&quot;Task Created&quot;]" />
+              <Sequence DisplayName="タスク割り当て処理" sap:VirtualizedContainerService.HintSize="478,562" sap2010:WorkflowViewState.IdRef="Sequence_79">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="upat:TaskUserAssignment" Default="[new TaskUserAssignment]" Name="taskUserAssignment" />
+                  <Variable x:TypeArguments="scg:List(upat:TaskUserAssignment)" Default="[New List(Of taskUserAssignment)]" Name="taskUserAssignmentList" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:MultipleAssign sap2010:Annotation.AnnotationText="TaskIdとTaskUserOrMailをアクションオブジェクトからセットする" DisplayName="複数代入" sap:VirtualizedContainerService.HintSize="338,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
+                  <ui:MultipleAssign.AssignOperations>
+                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="s:Nullable(x:Int64)">[taskUserAssignment.TaskId]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="s:Nullable(x:Int64)">[docValidationActionObj.Id]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[taskUserAssignment.UserNameOrEmail]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">[in_UserName]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                    </scg:List>
+                  </ui:MultipleAssign.AssignOperations>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:MultipleAssign>
+                <AddToCollection x:TypeArguments="upat:TaskUserAssignment" sap2010:Annotation.AnnotationText="taskUserAssignmentListにtaskUserAssignmentを追加" Collection="[taskUserAssignmentList]" DisplayName="コレクションに追加：taskUserAssignmentList" sap:VirtualizedContainerService.HintSize="338,66" sap2010:WorkflowViewState.IdRef="AddToCollection`1_8" Item="[taskUserAssignment]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </AddToCollection>
+                <upat:AssignTasks FailedTaskAssignments="{x:Null}" TimeoutMs="{x:Null}" DisplayName="タスクを割り当て：ドキュメント検証依頼" sap:VirtualizedContainerService.HintSize="338,164" sap2010:WorkflowViewState.IdRef="AssignTasks_8" TaskUserAssignments="[taskUserAssignmentList]" />
+              </Sequence>
+              <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="478,93" sap2010:WorkflowViewState.IdRef="LogMessage_94" Level="Info" Message="[&quot;Task Assigned&quot;]" />
+              <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="478,93" sap2010:WorkflowViewState.IdRef="LogMessage_95" Level="Info" Message="[&quot;Wait for task completion…&quot;]" />
+              <p:WaitForDocumentValidationActionAndResume ActionOutput="{x:Null}" StatusMessage="{x:Null}" TimeoutMs="{x:Null}" WaitItemDataObject="{x:Null}" ActionInput="[docValidationActionObj]" AutomaticExtractionResults="[docExtractResult]" DisplayName="ドキュメント検証アクション完了まで待機し再開" DocumentObjectModel="[docObjectModel]" DocumentPath="[pathInputFile]" DocumentText="[docText]" DownloadFolderPath="[pathDownloadFolder]" sap:VirtualizedContainerService.HintSize="478,365" sap2010:WorkflowViewState.IdRef="WaitForDocumentValidationActionAndResume_4" RemoveDataFromStorage="False" Taxonomy="[docTaxonomy]" ValidatedExtractionResults="[docExtractResult]" />
+              <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="478,93" sap2010:WorkflowViewState.IdRef="LogMessage_96" Level="Info" Message="[&quot;End：Extract Validation&quot;]" />
+            </Sequence>
+            <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="520,93" sap2010:WorkflowViewState.IdRef="LogMessage_97" Level="Info" Message="[&quot;Resume&quot;]" />
+          </Sequence>
+          <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="1432,93" sap2010:WorkflowViewState.IdRef="LogMessage_98" Level="Info" Message="[&quot;Start：Export Extract Result&quot;]" />
+          <p6:ExportExtractionResults DataSet="[docDataset]" DisplayName="抽出結果をエクスポート" ExtractionResult="[docExtractResult]" sap:VirtualizedContainerService.HintSize="1432,177" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_7" IncludeConfidence="True">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </p6:ExportExtractionResults>
+          <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="1432,93" sap2010:WorkflowViewState.IdRef="LogMessage_99" Level="Info" Message="[&quot;End：Export Extract Result&quot;]" />
+          <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="読込データファイルの名前に&quot;_output&quot;を追加してエクセルファイル(.xlsx)として保存" DataTable="[docDataset.Tables(0)]" DisplayName="範囲に書き込み：抽出結果をExcelに出力" sap:VirtualizedContainerService.HintSize="1432,159" sap2010:WorkflowViewState.IdRef="WriteRange_7" SheetName="output" WorkbookPath="[System.IO.Path.Combine(pathOutputFolder, Path.GetFileNameWithoutExtension(inputFiles(count).Name)+&quot;_output.xlsx&quot;)]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:WriteRange>
+          <ui:CommentOut DisplayName="コメント アウト" sap:VirtualizedContainerService.HintSize="1432,620" sap2010:WorkflowViewState.IdRef="CommentOut_31">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="無視されたアクティビティ" sap:VirtualizedContainerService.HintSize="652,542" sap2010:WorkflowViewState.IdRef="Sequence_82">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <p4:TrainExtractorsScope DisplayName="抽出子トレーニング スコープ" DocumentObjectModel="[docObjectModel]" DocumentPath="[pathInputFile]" DocumentText="[docText]" sap:VirtualizedContainerService.HintSize="610,450" HumanValidatedData="[docExtractResult]" sap2010:WorkflowViewState.IdRef="TrainExtractorsScope_8" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI00e5ca2a6ccb45d28f88fc61e0a26be5&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;マーケティング.アンケート.イベント&quot;:{&quot;FieldMappings&quot;:{&quot;マーケティング.アンケート.イベント.氏名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.氏名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.メールアドレス&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.メールアドレス&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.電話番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.電話番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.イベントの満足度&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.イベントの満足度&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.ニュースレターを購読する&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.ニュースレターを購読する&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.コメント&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.コメント&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.交通費&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.交通費.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.領収書.交通費.出発&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.出発&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.領収書.交通費.到着&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.到着&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.飛行機&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.飛行機.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.飛行機.出発&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.出発&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.飛行機.到着&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.到着&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.交際費&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.交際費.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交際費.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.請求書.請求書A&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.請求書.請求書A.会社名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.会社名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.請求No&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.請求No&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳.摘要&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.摘要&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳.数量&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.数量&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳.単価&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.単価&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.内訳.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.請求書.請求書A.合計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.合計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.見積書.見積書&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.見積書.見積書.発行日&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.発行日&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.郵便番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.郵便番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.取引先会社住所&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.取引先会社住所&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.会社名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.会社名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.お見積の有効期限&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.お見積の有効期限&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.お見積金額（税込）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.お見積金額（税込）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.内容&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.内容&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.数量&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.数量&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.単価（税抜）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.単価（税抜）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.消費税&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.消費税&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.小計（税抜）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.小計（税抜）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.小計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.小計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.消費税&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.消費税&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.合計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.合計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.備考&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.備考&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null}}},&quot;UI36ec03f5e14842e2b24bcdf175e94664&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;マーケティング.アンケート.イベント&quot;:{&quot;FieldMappings&quot;:{&quot;マーケティング.アンケート.イベント.氏名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.氏名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.メールアドレス&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.メールアドレス&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.電話番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.電話番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.イベントの満足度&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.イベントの満足度&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.ニュースレターを購読する&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.ニュースレターを購読する&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;マーケティング.アンケート.イベント.コメント&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;マーケティング.アンケート.イベント.コメント&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.交通費&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.交通費.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.交通費.出発&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.出発&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.交通費.到着&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交通費.到着&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.飛行機&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.飛行機.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.飛行機.出発&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.出発&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.領収書.飛行機.到着&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.飛行機.到着&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.領収書.交際費&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.領収書.交際費.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.領収書.交際費.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.請求書.請求書A&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.請求書.請求書A.会社名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.会社名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.請求No&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.請求No&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.内訳&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.内訳.摘要&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.摘要&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.内訳.数量&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.数量&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.内訳.単価&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.単価&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.内訳.金額&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.内訳.金額&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;ファイナンス.請求書.請求書A.合計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.請求書.請求書A.合計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;ファイナンス.見積書.見積書&quot;:{&quot;FieldMappings&quot;:{&quot;ファイナンス.見積書.見積書.発行日&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.発行日&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.郵便番号&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.郵便番号&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.取引先会社住所&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.取引先会社住所&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.会社名&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.会社名&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.お見積の有効期限&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.お見積の有効期限&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.お見積金額（税込）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.お見積金額（税込）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.内容&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.内容&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.数量&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.数量&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.単価（税抜）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.単価（税抜）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.消費税&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.消費税&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.見積テーブル.小計（税抜）&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.見積テーブル.小計（税抜）&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.小計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.小計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.消費税&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.消費税&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.合計&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.合計&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;ファイナンス.見積書.見積書.備考&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;ファイナンス.見積書.見積書.備考&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UI36ec03f5e14842e2b24bcdf175e94664&quot;:&quot;0&quot;,&quot;UI00e5ca2a6ccb45d28f88fc61e0a26be5&quot;:&quot;0&quot;},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UI00e5ca2a6ccb45d28f88fc61e0a26be5&quot;:[],&quot;UI36ec03f5e14842e2b24bcdf175e94664&quot;:[]}}">
+                  <p4:TrainExtractorsScope.Trainables>
+                    <p8:MachineLearningExtractorTrainer Configuration="{x:Null}" SelectedMLSkill="{x:Null}" DisplayName="マシン ラーニング抽出子トレーナー：領収書" Endpoint="https://receipts.uipath.com" sap:VirtualizedContainerService.HintSize="234,195" sap2010:WorkflowViewState.IdRef="MachineLearningExtractorTrainer_15" OutputFolder="Extractor" PersistenceId="UI00e5ca2a6ccb45d28f88fc61e0a26be5">
+                      <p8:MachineLearningExtractorTrainer.AvailableMLSkills>
+                        <scg:List x:TypeArguments="x:String" Capacity="0" />
+                      </p8:MachineLearningExtractorTrainer.AvailableMLSkills>
+                      <p8:MachineLearningExtractorTrainer.DocumentObjectModel>
+                        <InArgument x:TypeArguments="p3:Document">
+                          <DelegateArgumentValue x:TypeArguments="p3:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_501">
+                            <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p8:MachineLearningExtractorTrainer.DocumentObjectModel>
+                      <p8:MachineLearningExtractorTrainer.DocumentPath>
+                        <InArgument x:TypeArguments="x:String">
+                          <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_502">
+                            <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p8:MachineLearningExtractorTrainer.DocumentPath>
+                      <p8:MachineLearningExtractorTrainer.DocumentText>
+                        <InArgument x:TypeArguments="x:String">
+                          <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_500">
+                            <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p8:MachineLearningExtractorTrainer.DocumentText>
+                      <p8:MachineLearningExtractorTrainer.HumanValidatedData>
+                        <InArgument x:TypeArguments="p5:ExtractionResult[]">
+                          <DelegateArgumentValue x:TypeArguments="p5:ExtractionResult[]" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_503">
+                            <DelegateInArgument x:TypeArguments="p5:ExtractionResult[]" Name="HumanValidatedData" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p8:MachineLearningExtractorTrainer.HumanValidatedData>
+                    </p8:MachineLearningExtractorTrainer>
+                    <p8:MachineLearningExtractorTrainer Configuration="{x:Null}" SelectedMLSkill="{x:Null}" DisplayName="マシン ラーニング抽出子トレーナー" Endpoint="https://invoices.uipath.com" sap:VirtualizedContainerService.HintSize="234,195" sap2010:WorkflowViewState.IdRef="MachineLearningExtractorTrainer_16" OutputFolder="Extactor" PersistenceId="UI36ec03f5e14842e2b24bcdf175e94664">
+                      <p8:MachineLearningExtractorTrainer.AvailableMLSkills>
+                        <scg:List x:TypeArguments="x:String" Capacity="0" />
+                      </p8:MachineLearningExtractorTrainer.AvailableMLSkills>
+                      <p8:MachineLearningExtractorTrainer.DocumentObjectModel>
+                        <InArgument x:TypeArguments="p3:Document">
+                          <DelegateArgumentValue x:TypeArguments="p3:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_505">
+                            <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p8:MachineLearningExtractorTrainer.DocumentObjectModel>
+                      <p8:MachineLearningExtractorTrainer.DocumentPath>
+                        <InArgument x:TypeArguments="x:String">
+                          <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_506">
+                            <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p8:MachineLearningExtractorTrainer.DocumentPath>
+                      <p8:MachineLearningExtractorTrainer.DocumentText>
+                        <InArgument x:TypeArguments="x:String">
+                          <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_504">
+                            <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p8:MachineLearningExtractorTrainer.DocumentText>
+                      <p8:MachineLearningExtractorTrainer.HumanValidatedData>
+                        <InArgument x:TypeArguments="p5:ExtractionResult[]">
+                          <DelegateArgumentValue x:TypeArguments="p5:ExtractionResult[]" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_507">
+                            <DelegateInArgument x:TypeArguments="p5:ExtractionResult[]" Name="HumanValidatedData" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p8:MachineLearningExtractorTrainer.HumanValidatedData>
+                    </p8:MachineLearningExtractorTrainer>
+                  </p4:TrainExtractorsScope.Trainables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </p4:TrainExtractorsScope>
+              </Sequence>
+            </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CommentOut>
+        </Sequence>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">29,520</av:Point>
+                <av:Size x:Key="ShapeSize">262,60</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">160,580 160,610 10,610 10,340 408,340 408,356.5</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="ファイルカウントアップ" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_29">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[count +1]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <FlowStep.Next>
+              <FlowDecision x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="ファイルカウントがファイル数より小さいか？" Condition="[count &lt; listLen]" DisplayName="フロー条件分岐" sap:VirtualizedContainerService.HintSize="155,131" sap2010:WorkflowViewState.IdRef="FlowDecision_2" True="{x:Reference __ReferenceID0}">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <av:Point x:Key="ShapeLocation">330.5,356.5</av:Point>
+                    <av:Size x:Key="ShapeSize">155,131</av:Size>
+                    <av:PointCollection x:Key="TrueConnector">330.5,421 300.5,421 300.5,420 260,420</av:PointCollection>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    <av:PointCollection x:Key="FalseConnector">485.5,422 515.5,422 515.5,422.02 535.5,422.02</av:PointCollection>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </FlowDecision>
+            </FlowStep.Next>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <FlowStep x:Name="__ReferenceID4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">168.895,127.5</av:Point>
+            <av:Size x:Key="ShapeSize">262,60</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">299.895,187.5 299.895,237.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign DisplayName="ファイル数" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Int32">[listLen]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Int32">[inputFiles.Count]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">168.895,237.5</av:Point>
+                <av:Size x:Key="ShapeSize">262,60</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">299.895,297.5 299.895,327.5 408,327.5 408,356.5</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="ファイルカウント" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">0</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <FlowStep.Next>
+              <x:Reference>__ReferenceID1</x:Reference>
+            </FlowStep.Next>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+      <x:Reference>__ReferenceID2</x:Reference>
+      <x:Reference>__ReferenceID3</x:Reference>
+    </Flowchart>
+    <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="645,93" sap2010:WorkflowViewState.IdRef="LogMessage_100" Level="Info" Message="[&quot;End：Document Understanding&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+  </Sequence>
+</Activity>
